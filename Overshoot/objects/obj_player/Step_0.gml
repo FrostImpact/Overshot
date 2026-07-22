@@ -1,4 +1,6 @@
-yspeed += gravity_force
+var game_speed = obj_game_manager.game_speed
+
+yspeed += gravity_force * game_speed
 xspeed = clamp(xspeed, -max_speed, max_speed)
 yspeed = clamp(yspeed, -max_speed, max_speed)
 
@@ -8,13 +10,18 @@ if (mouse_check_button_pressed(mb_left)) {
     aim_start_x = mouse_x
     aim_start_y = mouse_y
 	
+	aim_check = true
 }
 
-if (is_aiming){
-	xspeed = lerp(xspeed,0,aim_slow)
-	yspeed = lerp(yspeed,0,aim_slow)
-	
+if (mouse_check_button_released(mb_left)) {
+	aim_check = false
 }
+
+//if (is_aiming){
+	//xspeed = lerp(xspeed,0,game_speed)
+	//yspeed = lerp(yspeed,0,game_speed)
+	
+//}
 
 //on release, launch code
 if (is_aiming && mouse_check_button_released(mb_left)) {
@@ -28,6 +35,9 @@ if (is_aiming && mouse_check_button_released(mb_left)) {
     yspeed = lengthdir_y(_launch_speed, _dir)
 }
 
+var _move_x = xspeed * game_speed
+var _move_y = yspeed * game_speed
+
 var _avg_speed = point_distance(0, 0, xspeed, yspeed)
 var _speed_ratio = clamp(_avg_speed / max_speed, 0, 1)
 
@@ -35,35 +45,40 @@ if (_avg_speed > 0.1) {
     image_angle = point_direction(0, 0, xspeed, yspeed)
 }
 
-if (place_meeting(x + xspeed, y, obj_wall) || place_meeting(x + xspeed, y, obj_enemy)) {
+if (place_meeting(x + _move_x, y, obj_wall) || place_meeting(x + _move_x, y, obj_enemy)) {
     impact_speed = _avg_speed
 
-    if (place_meeting(x + xspeed, y, obj_enemy)) {
-        var _enemy = instance_place(x + xspeed, y, obj_enemy)
+    if (place_meeting(x + _move_x, y, obj_enemy)) {
+        var _enemy = instance_place(x + _move_x, y, obj_enemy)
     }
 	
-	if (place_meeting(x + xspeed, y, obj_wall_hurt)) {
+	if (place_meeting(x + _move_x, y, obj_wall_hurt)) {
 		hp -= 10
 	}
 
     xspeed = -xspeed * bounce
-    squash_timer = squash_duration
+    squash_timer = squash_duration * game_speed
+	
 } else {
-    x += xspeed
+    x += _move_x
 }
 
-if (place_meeting(x, y + yspeed, obj_wall) || place_meeting(x, y + yspeed, obj_enemy) || place_meeting(x, y + yspeed, obj_ground)) {
+if (place_meeting(x, y+ _move_y, obj_wall) || place_meeting(x, y + _move_y, obj_enemy) || place_meeting(x, y + yspeed, obj_ground)) {
     impact_speed = _avg_speed
 
-    if (place_meeting(x, y + yspeed, obj_enemy)) {
-        var _enemy = instance_place(x, y + yspeed, obj_enemy)
+    if (place_meeting(x, y + _move_y, obj_enemy)) {
+        var _enemy = instance_place(x, _move_y, obj_enemy)
     }
 	
-	if (place_meeting(x + xspeed, y, obj_wall_hurt)) {
+	if (place_meeting(x + _move_x, y, obj_wall_hurt)) {
+		hp -= 10
+	}
+	
+	if (place_meeting(x, y + _move_y, obj_wall_hurt)) {
 		hp -= 10
 	}
 
-    if (place_meeting(x, y + yspeed, obj_ground)) {
+    if (place_meeting(x, y + _move_y, obj_ground)) {
         yspeed = -ground_launch_speed
     } else {
         yspeed = -yspeed * bounce
@@ -71,7 +86,7 @@ if (place_meeting(x, y + yspeed, obj_wall) || place_meeting(x, y + yspeed, obj_e
 
     squash_timer = squash_duration
 } else {
-    y += yspeed
+    y += _move_y
 }
 
 var _target_xscale = 1
@@ -87,5 +102,5 @@ if (squash_timer > 0) {
     _target_yscale = 1 - stretch_amount * _speed_ratio * 0.5
 }
 
-image_xscale = lerp(image_xscale, _target_xscale, scale_lerp_speed)
-image_yscale = lerp(image_yscale, _target_yscale, scale_lerp_speed)
+image_xscale = lerp(image_xscale, _target_xscale, scale_lerp_speed * game_speed)
+image_yscale = lerp(image_yscale, _target_yscale, scale_lerp_speed * game_speed)

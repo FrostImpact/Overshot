@@ -5,9 +5,8 @@ gravity_force = 0.35
 bounce = 0.7
 max_speed = 20
 
-aim_slow = 0.2
-
 is_aiming = false
+aim_check = false
 launch_power_scale = 0.15
 max_launch_speed = 20
 aim_start_x = 0

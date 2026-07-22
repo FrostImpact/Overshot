@@ -1,10 +1,11 @@
+var game_speed = obj_game_manager.game_speed
 var _target_angle = point_direction(x, y, obj_player.x, obj_player.y)
 
 //firing code
 switch (laser_state) {
     case "tracking":
-        laser_angle += angle_difference(_target_angle, laser_angle) * laser_track_rate
-        laser_timer += 1
+        laser_angle += angle_difference(_target_angle, laser_angle) * laser_track_rate * game_speed
+        laser_timer += 1 * game_speed
         if (laser_timer >= tracking_duration) {
             laser_state = "locked"
             laser_timer = 0
@@ -12,7 +13,7 @@ switch (laser_state) {
         break
 
     case "locked":
-        laser_timer += 1
+        laser_timer += 1 * game_speed
         if (laser_timer >= lock_duration) {
             laser_state = "firing"
             laser_timer = 0
@@ -21,7 +22,7 @@ switch (laser_state) {
         break
 
     case "firing":
-        laser_timer += 1
+        laser_timer += 1 * game_speed
         if (!has_hit_player) {
             var _dx = lengthdir_x(1, laser_angle)
             var _dy = lengthdir_y(1, laser_angle)
@@ -48,13 +49,13 @@ laser_alpha = (laser_state == "firing") ? 1 : 0.3
 
 //fire recoil
 if (kick_timer > 0) {
-    kick_timer -= 1
+    kick_timer -= 1 * game_speed
     var _kick_ratio = kick_timer / kick_duration
     image_xscale = 1 + kick_amount * _kick_ratio
     image_yscale = 1 - kick_amount * _kick_ratio * 0.5
 } else {
-    image_xscale = lerp(image_xscale, 1, 0.2)
-    image_yscale = lerp(image_yscale, 1, 0.2)
+    image_xscale = lerp(image_xscale, 1, 0.2 * game_speed)
+    image_yscale = lerp(image_yscale, 1, 0.2 * game_speed)
 }
 
 if (hit_cooldown <= 0) {
@@ -92,19 +93,19 @@ if (hit_cooldown <= 0) {
 //knockback systems
 
 if (hit_cooldown > 0) {
-    hit_cooldown -= 1
+    hit_cooldown -= 1 * game_speed
 }
 
 
 //preventing enemy from going into the wall
 if (!place_meeting(x + knockback_x, y, obj_wall)) {
-    x += knockback_x
+    x += knockback_x * game_speed
 } else {
     knockback_x = 0
 }
 
 if (!place_meeting(x, y + knockback_y, obj_wall)) {
-    y += knockback_y
+    y += knockback_y * game_speed
 } else {
     knockback_y = 0
 }
@@ -117,7 +118,7 @@ knockback_y *= knockback_friction
 
 //squash and stretch
 if (hit_squash_timer > 0) {
-    hit_squash_timer -= 1
+    hit_squash_timer -= 1 * game_speed
     var _hit_ratio = hit_squash_timer / hit_squash_duration
     image_xscale = 1 - hit_squash_amount * _hit_ratio
     image_yscale = 1 + hit_squash_amount * _hit_ratio
@@ -125,5 +126,5 @@ if (hit_squash_timer > 0) {
 
 //visual damage flash like when characters flash white when hit
 if (flash_timer > 0) {
-    flash_timer -= 1
+    flash_timer -= 1 * game_speed
 }
