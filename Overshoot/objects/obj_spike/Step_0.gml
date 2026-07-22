@@ -1,0 +1,3 @@
+if (hit_cooldown > 0) {
+    hit_cooldown -= 1
+}
