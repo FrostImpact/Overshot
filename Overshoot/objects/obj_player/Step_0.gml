@@ -7,6 +7,13 @@ if (mouse_check_button_pressed(mb_left)) {
     is_aiming = true
     aim_start_x = mouse_x
     aim_start_y = mouse_y
+	
+}
+
+if (is_aiming){
+	xspeed = lerp(xspeed,0,aim_slow)
+	yspeed = lerp(yspeed,0,aim_slow)
+	
 }
 
 //on release, launch code
@@ -34,6 +41,10 @@ if (place_meeting(x + xspeed, y, obj_wall) || place_meeting(x + xspeed, y, obj_e
     if (place_meeting(x + xspeed, y, obj_enemy)) {
         var _enemy = instance_place(x + xspeed, y, obj_enemy)
     }
+	
+	if (place_meeting(x + xspeed, y, obj_wall_hurt)) {
+		hp -= 10
+	}
 
     xspeed = -xspeed * bounce
     squash_timer = squash_duration
@@ -47,6 +58,10 @@ if (place_meeting(x, y + yspeed, obj_wall) || place_meeting(x, y + yspeed, obj_e
     if (place_meeting(x, y + yspeed, obj_enemy)) {
         var _enemy = instance_place(x, y + yspeed, obj_enemy)
     }
+	
+	if (place_meeting(x + xspeed, y, obj_wall_hurt)) {
+		hp -= 10
+	}
 
     if (place_meeting(x, y + yspeed, obj_ground)) {
         yspeed = -ground_launch_speed
