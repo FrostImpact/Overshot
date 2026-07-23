@@ -12,7 +12,7 @@ var _timer_y = 180;
 
 var _seconds = string(floor(room_time));
 
-//draw_set_font()
+draw_set_font(f_pixelta)
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 

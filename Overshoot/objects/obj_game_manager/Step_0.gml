@@ -25,6 +25,7 @@ if (game_speed < 1.0) { //for black and white shader
 }
 
 
+
 //zoom in camera during bulletimte
 cam = view_camera[0]
 

@@ -35,6 +35,7 @@
   },
   "name":"Overshoot",
   "resources":[
+    {"id":{"name":"f_pixelta","path":"fonts/f_pixelta/f_pixelta.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy",},},
     {"id":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},},
