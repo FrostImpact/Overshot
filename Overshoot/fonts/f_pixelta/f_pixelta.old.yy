@@ -110,8 +110,8 @@
   "maintainGms1Font":false,
   "name":"f_pixelta",
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"text box",
+    "path":"folders/text box.yy",
   },
   "pointRounding":0,
   "ranges":[

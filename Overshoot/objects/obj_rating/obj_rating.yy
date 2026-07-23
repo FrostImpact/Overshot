@@ -10,8 +10,8 @@
   "name":"obj_rating",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"scoring",
+    "path":"folders/scoring.yy",
   },
   "parentObjectId":null,
   "persistent":false,

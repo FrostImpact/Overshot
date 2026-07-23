@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"scoring",
+    "path":"folders/scoring.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -22,6 +22,6 @@ draw_text_ext(_text_x, _text_y, text_display, -1, _wrap_w)
 
 if (state == TB_STATE.WAITING) {
     if ((current_time div 250) mod 2 == 0) {
-        draw_text(_text_x + _wrap_w - 16, _y + (_sh / 2) - 24, "▼")
+        draw_text(_text_x + _wrap_w - 5, _y + (_sh / 2) - 32, "▼")
     }
 }
