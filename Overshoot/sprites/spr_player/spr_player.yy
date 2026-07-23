@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"player",
+    "path":"folders/player.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

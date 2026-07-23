@@ -6,8 +6,8 @@
   "name":"obj_wall_hurt",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"tiles",
+    "path":"folders/tiles.yy",
   },
   "parentObjectId":{
     "name":"obj_wall",

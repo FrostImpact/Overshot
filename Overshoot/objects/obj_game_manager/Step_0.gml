@@ -5,6 +5,12 @@ if (obj_player.hp < 0){
 	
 }
 
+
+if (check = 0) {
+	textbox_say("Hello! Welcome to OVERSHOOT")
+	check = 1
+}
+
 //bullet time managers
 
 if (obj_player.aim_check == true){
@@ -23,8 +29,6 @@ if (game_speed < 1.0) { //for black and white shader
 
     layer_set_visible("FX_Bullet_Time", false)
 }
-
-
 
 //zoom in camera during bulletimte
 cam = view_camera[0]

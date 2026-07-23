@@ -11,8 +11,8 @@
   "name":"obj_player",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"player",
+    "path":"folders/player.yy",
   },
   "parentObjectId":null,
   "persistent":false,

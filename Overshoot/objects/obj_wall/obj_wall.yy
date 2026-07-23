@@ -6,8 +6,8 @@
   "name":"obj_wall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"tiles",
+    "path":"folders/tiles.yy",
   },
   "parentObjectId":null,
   "persistent":false,
