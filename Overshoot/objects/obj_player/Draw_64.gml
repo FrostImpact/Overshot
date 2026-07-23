@@ -1,7 +1,7 @@
 var _hp_ratio = clamp(hp / hp_max, 0, 1)
 
-draw_set_color(c_black)
-draw_rectangle(hp_bar_x - 2, hp_bar_y - 2, hp_bar_x + hp_bar_width + 2, hp_bar_y + hp_bar_height + 2, false)
+//draw_set_color(c_black)
+//draw_rectangle(hp_bar_x - 2, hp_bar_y - 2, hp_bar_x + hp_bar_width + 2, hp_bar_y + hp_bar_height + 2, false)
 
 draw_set_color(c_dkgray)
 draw_rectangle(hp_bar_x, hp_bar_y, hp_bar_x + hp_bar_width, hp_bar_y + hp_bar_height, false)

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"tiles",
+    "path":"folders/tiles.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
