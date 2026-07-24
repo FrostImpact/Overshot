@@ -7,7 +7,10 @@ if (obj_player.hp < 0){
 
 
 if (check = 0) {
-	textbox_say("Hello! Welcome to OVERSHOOT")
+	textbox_say(["Hello! Welcome to OVERSHOOT, a game where you... launch yourself at balls!",
+				"Oh look, one of those dirty red scumbags...",
+				"Do me a favour and... get rid of it.",
+				"(Click and drag back your mouse to launch yourself)"])
 	check = 1
 }
 
