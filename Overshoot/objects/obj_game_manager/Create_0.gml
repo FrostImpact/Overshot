@@ -11,3 +11,5 @@ view_visible[0] = true
 //sets everything outside of room to a color
 
 check = 0
+
+boss_slow = false

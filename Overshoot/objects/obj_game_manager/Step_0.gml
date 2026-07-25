@@ -16,20 +16,18 @@ if (check = 0) {
 
 //bullet time managers
 
-if (obj_player.aim_check == true){
-	game_speed = 0.2
+if obj_player.aim_check == true {
+    game_speed = 0.2
+} else if boss_slow == true {
+    game_speed = 0.5
+} else {
+    game_speed = 1
 }
 
-else if (obj_player.aim_check == false){
-	game_speed = 1
-}
 
-
-if (game_speed < 1.0) { //for black and white shader
-
+if game_speed < 1.0 { //black and white shaders
     layer_set_visible("FX_Bullet_Time", true)
 } else {
-
     layer_set_visible("FX_Bullet_Time", false)
 }
 

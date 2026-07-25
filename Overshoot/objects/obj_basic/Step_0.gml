@@ -13,6 +13,7 @@ if (hit_cooldown <= 0) {
         var _player_speed = point_distance(0, 0, obj_player.xspeed, obj_player.yspeed)
         var _damage = _player_speed * damage_scale
         if (_damage > 0) {
+			
             enemy_hp -= _damage
             hit_cooldown = hit_cooldown_duration
             var _knock_dir = point_direction(obj_player.x, obj_player.y, x, y)
@@ -26,6 +27,7 @@ if (hit_cooldown <= 0) {
 				obj_rating.popup_value += obj_rating.time_gain_kill
 				obj_rating.popup_timer = obj_rating.popup_duration
 				obj_rating.room_time += obj_rating.time_gain_kill
+				
                 instance_destroy()
 				
 				
