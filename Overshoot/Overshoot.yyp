@@ -12,6 +12,7 @@
   "Folders":[
     {"$GMFolder":"","%Name":"enemies","folderPath":"folders/enemies.yy","name":"enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"mini_boss","folderPath":"folders/enemies/mini_boss.yy","name":"mini_boss","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"sounds","folderPath":"folders/sounds.yy","name":"sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Levels","folderPath":"folders/Levels.yy","name":"Levels","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"player","folderPath":"folders/player.yy","name":"player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"scoring","folderPath":"folders/scoring.yy","name":"scoring","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -56,7 +57,10 @@
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"Level1","path":"rooms/Level1/Level1.yy",},},
     {"id":{"name":"Level2","path":"rooms/Level2/Level2.yy",},},
+    {"id":{"name":"scr_sound_manager","path":"scripts/scr_sound_manager/scr_sound_manager.yy",},},
     {"id":{"name":"scr_textbox","path":"scripts/scr_textbox/scr_textbox.yy",},},
+    {"id":{"name":"snd_release","path":"sounds/snd_release/snd_release.yy",},},
+    {"id":{"name":"snd_stretch","path":"sounds/snd_stretch/snd_stretch.yy",},},
     {"id":{"name":"spr_basic","path":"sprites/spr_basic/spr_basic.yy",},},
     {"id":{"name":"spr_laser","path":"sprites/spr_laser/spr_laser.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
