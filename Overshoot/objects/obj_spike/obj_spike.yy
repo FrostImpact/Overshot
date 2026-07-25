@@ -10,8 +10,8 @@
   "name":"obj_spike",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"tiles",
+    "path":"folders/tiles.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite4",
-    "path":"sprites/Sprite4/Sprite4.yy",
+    "name":"spr_spike",
+    "path":"sprites/spr_spike/spr_spike.yy",
   },
   "spriteMaskId":null,
   "visible":true,

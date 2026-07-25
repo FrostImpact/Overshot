@@ -1,0 +1,1 @@
+room_time = max(room_time - (1/room_speed), 0);

@@ -1,6 +1,6 @@
 //attack
 laser_angle = 0
-laser_track_rate = 0.05
+laser_track_rate = 0.2
 laser_state = "tracking"
 laser_timer = 0
 tracking_duration = 90
