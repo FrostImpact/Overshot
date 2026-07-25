@@ -12,12 +12,14 @@
   "Folders":[
     {"$GMFolder":"","%Name":"enemies","folderPath":"folders/enemies.yy","name":"enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"mini_boss","folderPath":"folders/enemies/mini_boss.yy","name":"mini_boss","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"sounds","folderPath":"folders/sounds.yy","name":"sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Levels","folderPath":"folders/Levels.yy","name":"Levels","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"player","folderPath":"folders/player.yy","name":"player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"scoring","folderPath":"folders/scoring.yy","name":"scoring","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"sounds","folderPath":"folders/sounds.yy","name":"sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"text box","folderPath":"folders/text box.yy","name":"text box","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"tiles","folderPath":"folders/tiles.yy","name":"tiles","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"sprites","folderPath":"folders/tiles/sprites.yy","name":"sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"objects","folderPath":"folders/tiles/objects.yy","name":"objects","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[
     {"link":"io.gamemaker.gm_filter_greyscale-1.0.0","name":"io.gamemaker.gm_filter_greyscale-1.0.0","path":"io.gamemaker.gm_filter_greyscale-1.0.0.yyp",},
@@ -52,6 +54,7 @@
     {"id":{"name":"obj_laser","path":"objects/obj_laser/obj_laser.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_rating","path":"objects/obj_rating/obj_rating.yy",},},
+    {"id":{"name":"obj_shatter","path":"objects/obj_shatter/obj_shatter.yy",},},
     {"id":{"name":"obj_spike","path":"objects/obj_spike/obj_spike.yy",},},
     {"id":{"name":"obj_text_box","path":"objects/obj_text_box/obj_text_box.yy",},},
     {"id":{"name":"obj_wall_hurt","path":"objects/obj_wall_hurt/obj_wall_hurt.yy",},},

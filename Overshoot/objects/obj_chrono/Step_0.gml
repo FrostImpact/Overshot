@@ -2,13 +2,45 @@ event_inherited()
 
 var game_speed = obj_game_manager.game_speed
 
-if phase == 1 and enemy_hp <= enemy_max_hp * 0.2 {
+if enemy_hp <= 0 and state != 6 {
+    state = 6
+    timer = 120
+    obj_game_manager.game_speed = 1
+    obj_game_manager.boss_slow = false
+    
+    textbox_say(["Impossible...", "My time...", "Is up...!"], true, 35)
+}
+
+if shatter_cooldown > 0 { shatter_cooldown -= 1 * game_speed }
+
+if obj_player.aim_check == true and state != 6 {
+    if shatter_cooldown <= 0 {
+        aim_punish_timer += 1
+        if aim_punish_timer > 90 { 
+            state = 5
+            timer = 60
+            aim_punish_timer = 0
+            shatter_cooldown = 600
+            
+            obj_player.aim_check = false
+            obj_game_manager.game_speed = 1
+            
+            textbox_say(["You think you can slow down time against me?","ME??!"], true, 30)
+            
+            instance_create_layer(0, 0, layer, obj_shatter)
+        }
+    }
+} else {
+    if aim_punish_timer > 0 { aim_punish_timer -= 0.5 }
+}
+
+if phase == 1 and enemy_hp <= enemy_max_hp * 0.2 and state != 6 {
     phase = 2
     target_hp = enemy_hp + (enemy_max_hp * 0.1)
     state = 4
     timer = 120
     obj_game_manager.boss_slow = false
-    textbox_say(["You really thought it would be that easy?", "Time is a construct...", "And I can always just REWIND!", "Let's speed things up!"])
+    textbox_say(["You really thought it would be that easy?", "Time is a construct...", "And I can always just REWIND!", "Let's speed things up!"], true, 30)
 }
 
 if special_cooldown > 0 {
@@ -102,7 +134,7 @@ if state == 0 {
 } else if state == 4 {
     timer -= 1 * game_speed
     image_angle += 15 * game_speed
-    effect_create_above(ef_spark, x + random_range(-30, 30), y + random_range(-30, 30), 0, c_green)
+    effect_create_above(ef_ring, x + random_range(-30, 30), y + random_range(-30, 30), 0, c_lime)
     
     if enemy_hp < target_hp {
         enemy_hp += (target_hp - enemy_hp) * 0.05 * game_speed
@@ -113,5 +145,26 @@ if state == 0 {
         enemy_hp = target_hp
         state = 0
         timer = base_timer
+    }
+} else if state == 5 {
+    timer -= 1 
+    if timer <= 0 {
+        state = 0
+        timer = base_timer
+    }
+} else if state == 6 {
+    timer -= 1
+    
+    x += random_range(-3, 3)
+    y += random_range(-3, 3)
+    
+    effect_create_above(ef_spark, x + random_range(-20, 20), y + random_range(-20, 20), 1, c_lime)
+    effect_create_above(ef_flare, x + random_range(-30, 30), y + random_range(-30, 30), 0, c_white)
+    
+    if timer <= 0 {
+        effect_create_above(ef_explosion, x, y, 2, c_lime)
+        effect_create_above(ef_explosion, x + 30, y - 20, 1, c_white)
+        effect_create_above(ef_explosion, x - 30, y + 20, 1, c_lime)
+        instance_destroy()
     }
 }

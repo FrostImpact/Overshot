@@ -14,7 +14,7 @@ draw_text(gui_w / 2, bar_y - 20, "CHRONO")
 draw_set_halign(fa_left)
 
 
-draw_set_color(c_red)
+draw_set_color(c_gray)
 draw_rectangle(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, false)
 
 draw_set_color(hp_color)

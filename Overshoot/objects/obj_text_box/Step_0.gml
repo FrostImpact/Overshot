@@ -18,6 +18,21 @@ if (state == TB_STATE.TYPING) {
     }
 }
 
-if (keyboard_check_pressed(advance_key)) {
+if (state == TB_STATE.WAITING) {
+    
+    if (auto_advance == true) {
+        auto_timer++;
+        
+   
+        if (auto_timer >= auto_delay) {
+            textbox_advance();
+        }
+    }
+    
+	if (keyboard_check_pressed(advance_key)) {
     textbox_advance()
+	
+	}
+
 }
+
