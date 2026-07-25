@@ -17,7 +17,7 @@ kick_amount = 0.3
 shake_amount = 6
 
 //enemy health + damage from player collision
-enemy_hp = 50
+enemy_hp = 60
 enemy_max_hp = 50
 damage_scale = 0.8
 hit_cooldown = 0
