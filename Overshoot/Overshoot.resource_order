@@ -8,8 +8,8 @@
     {"name":"sounds","order":7,"path":"folders/sounds.yy",},
     {"name":"text box","order":4,"path":"folders/text box.yy",},
     {"name":"tiles","order":5,"path":"folders/tiles.yy",},
-    {"name":"sprites","order":8,"path":"folders/tiles/sprites.yy",},
     {"name":"objects","order":7,"path":"folders/tiles/objects.yy",},
+    {"name":"sprites","order":8,"path":"folders/tiles/sprites.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"f_pixolde","order":3,"path":"fonts/f_pixolde/f_pixolde.yy",},
@@ -34,5 +34,6 @@
     {"name":"spr_text_box","order":2,"path":"sprites/spr_text_box/spr_text_box.yy",},
     {"name":"spr_wall_hurt","order":2,"path":"sprites/spr_wall_hurt/spr_wall_hurt.yy",},
     {"name":"spr_wall","order":1,"path":"sprites/spr_wall/spr_wall.yy",},
+    {"name":"spri_player_death","order":3,"path":"sprites/spri_player_death/spri_player_death.yy",},
   ],
 }

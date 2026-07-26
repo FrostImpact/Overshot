@@ -1,9 +1,29 @@
 //temporary death manager
-if (obj_player.hp < 0){
-	
-	room_restart()
-	
+if (instance_exists(obj_player)) {
+    
+    if (obj_player.hp <= 0) {
+		
+		obj_player.image_speed = 0.5
+      
+        if (obj_player.sprite_index != spri_player_death) {
+            obj_player.sprite_index = spri_player_death;
+            obj_player.image_index = 0; 
+           
+        } 
+     
+        else {
+          
+            if (obj_player.image_index >= obj_player.image_number - 1) {
+                room_restart();
+            }
+        }
+        
+    }
 }
+	
+
+	
+
 
 
 if (check = 0) {

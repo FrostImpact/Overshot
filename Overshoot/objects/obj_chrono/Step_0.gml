@@ -1,22 +1,15 @@
 event_inherited()
 
+image_angle = point_direction(x, y, obj_player.x, obj_player.y)
 var game_speed = obj_game_manager.game_speed
 
-if enemy_hp <= 0 and state != 6 {
-    state = 6
-    timer = 120
-    obj_game_manager.game_speed = 1
-    obj_game_manager.boss_slow = false
-    
-    textbox_say(["Impossible...", "My time...", "Is up...!"], true, 35)
-}
+if (shatter_cooldown > 0) shatter_cooldown -= 1 * game_speed
+if (special_cooldown > 0) special_cooldown -= 1 * game_speed
 
-if shatter_cooldown > 0 { shatter_cooldown -= 1 * game_speed }
-
-if obj_player.aim_check == true and state != 6 {
-    if shatter_cooldown <= 0 {
+if (obj_player.aim_check) {
+    if (shatter_cooldown <= 0) {
         aim_punish_timer += 1
-        if aim_punish_timer > 90 { 
+        if (aim_punish_timer > 90) {
             state = 5
             timer = 60
             aim_punish_timer = 0
@@ -24,17 +17,23 @@ if obj_player.aim_check == true and state != 6 {
             
             obj_player.aim_check = false
             obj_game_manager.game_speed = 1
+            obj_game_manager.boss_slow = false 
             
-            textbox_say(["You think you can slow down time against me?","ME??!"], true, 30)
-            
+            textbox_say(["You think you can slow down time against me?", "ME??!"], true, 30)
             instance_create_layer(0, 0, layer, obj_shatter)
         }
     }
 } else {
-    if aim_punish_timer > 0 { aim_punish_timer -= 0.5 }
+    if (aim_punish_timer > 0) aim_punish_timer -= 0.5
 }
 
-if phase == 1 and enemy_hp <= enemy_max_hp * 0.2 and state != 6 {
+if (enemy_hp <= 0 && state != 6) {
+    state = 6
+    obj_game_manager.boss_slow = false 
+    textbox_say(["Impossible...", "My time... has run out...", "Ghhhk-!"], true, 30)
+}
+
+if (phase == 1 && enemy_hp <= enemy_max_hp * 0.2 && state != 6) {
     phase = 2
     target_hp = enemy_hp + (enemy_max_hp * 0.1)
     state = 4
@@ -43,128 +42,161 @@ if phase == 1 and enemy_hp <= enemy_max_hp * 0.2 and state != 6 {
     textbox_say(["You really thought it would be that easy?", "Time is a construct...", "And I can always just REWIND!", "Let's speed things up!"], true, 30)
 }
 
-if special_cooldown > 0 {
-    special_cooldown -= 1 * game_speed
-}
-
-if state == 1 {
+if (state == 1) {
     effect_create_below(ef_flare, x, y, 0, c_lime)
-} else if state == 3 {
+} else if (state == 3) {
     effect_create_below(ef_ring, x, y, 0, c_lime)
 }
 
-var base_timer = phase == 1 ? 25 : 10
-var spec_cooldown_set = phase == 1 ? 300 : 120
+var base_timer = (phase == 1) ? 25 : 10
+var spec_cooldown_set = (phase == 1) ? 300 : 120
 
-if state == 0 {
-    timer -= 1 * game_speed
-    if timer <= 0 {
-        if special_cooldown <= 0 and choose(0, 1) == 1 {
-            state = 2
-            timer = phase == 1 ? 20 : 10
-            special_cooldown = spec_cooldown_set
-            var dir = point_direction(x, y, obj_player.x, obj_player.y) + random_range(-30, 30)
-            targ_x = x
-            targ_y = y
-            while !place_meeting(targ_x, targ_y, obj_wall) and targ_x > 0 and targ_x < room_width and targ_y > 0 and targ_y < room_height {
-                targ_x += lengthdir_x(16, dir)
-                targ_y += lengthdir_y(16, dir)
+switch (state) {
+    case 0:
+        timer -= 1 * game_speed
+        if (timer <= 0) {
+            if (special_cooldown <= 0 && choose(0, 1) == 1) {
+                state = 2
+                timer = (phase == 1) ? 20 : 10
+                special_cooldown = spec_cooldown_set
+                
+                var dir = point_direction(x, y, obj_player.x, obj_player.y) + random_range(-30, 30)
+                targ_x = x
+                targ_y = y
+                
+                while (!place_meeting(targ_x, targ_y, obj_wall) && targ_x > 0 && targ_x < room_width && targ_y > 0 && targ_y < room_height) {
+                    targ_x += lengthdir_x(16, dir)
+                    targ_y += lengthdir_y(16, dir)
+                }
+                targ_x -= lengthdir_x(16, dir)
+                targ_y -= lengthdir_y(16, dir)
+            } else {
+                state = 1
+                timer = 15
+                var dir = point_direction(x, y, obj_player.x, obj_player.y)
+                targ_x = lengthdir_x(18, dir)
+                targ_y = lengthdir_y(18, dir)
             }
-            targ_x -= lengthdir_x(16, dir)
-            targ_y -= lengthdir_y(16, dir)
-        } else {
-            state = 1
-            timer = 15
-            var dir = point_direction(x, y, obj_player.x, obj_player.y)
-            targ_x = lengthdir_x(18, dir)
-            targ_y = lengthdir_y(18, dir)
         }
-    }
-} else if state == 1 {
-    var next_x = x + targ_x * game_speed
-    var next_y = y + targ_y * game_speed
-    
-    if !place_meeting(next_x, y, obj_wall) { x = next_x }
-    if !place_meeting(x, next_y, obj_wall) { y = next_y }
-    
-    timer -= 1 * game_speed
-    
-    if timer <= 0 {
-        var knife = instance_create_layer(x, y, layer, obj_knife)
-        knife.direction = point_direction(x, y, obj_player.x, obj_player.y)
-        knife.speed = 14 * game_speed
-        knife.image_angle = knife.direction
-        state = 0
-        timer = base_timer
-    }
-} else if state == 2 {
-    timer -= 1 * game_speed
-    if timer <= 0 {
-        state = 3
-        timer = phase == 1 ? 12 : 6
-        obj_game_manager.boss_slow = true
-    }
-} else if state == 3 {
-    var dist = point_distance(x, y, targ_x, targ_y)
-    var dir = point_direction(x, y, targ_x, targ_y)
-    var spd = min(24 * game_speed, dist)
-    
-    var next_x = x + lengthdir_x(spd, dir)
-    var next_y = y + lengthdir_y(spd, dir)
-    
-    var hit_wall = false
-    if !place_meeting(next_x, y, obj_wall) { x = next_x } else { hit_wall = true }
-    if !place_meeting(x, next_y, obj_wall) { y = next_y } else { hit_wall = true }
-    
-    timer -= 1
-    
-    if timer <= 0 {
-        var knife = instance_create_layer(x, y, layer, obj_knife)
-        knife.direction = point_direction(x, y, obj_player.x, obj_player.y)
-        knife.speed = 16 * game_speed
-        knife.image_angle = knife.direction
-        timer = phase == 1 ? 12 : 6
-    }
-    
-    if dist < 5 or hit_wall {
-        obj_game_manager.boss_slow = false
-        state = 0
-        timer = base_timer
-    }
-} else if state == 4 {
-    timer -= 1 * game_speed
-    image_angle += 15 * game_speed
-    effect_create_above(ef_ring, x + random_range(-30, 30), y + random_range(-30, 30), 0, c_lime)
-    
-    if enemy_hp < target_hp {
-        enemy_hp += (target_hp - enemy_hp) * 0.05 * game_speed
-    }
-    
-    if timer <= 0 {
-        image_angle = 0
-        enemy_hp = target_hp
-        state = 0
-        timer = base_timer
-    }
-} else if state == 5 {
-    timer -= 1 
-    if timer <= 0 {
-        state = 0
-        timer = base_timer
-    }
-} else if state == 6 {
-    timer -= 1
-    
-    x += random_range(-3, 3)
-    y += random_range(-3, 3)
-    
-    effect_create_above(ef_spark, x + random_range(-20, 20), y + random_range(-20, 20), 1, c_lime)
-    effect_create_above(ef_flare, x + random_range(-30, 30), y + random_range(-30, 30), 0, c_white)
-    
-    if timer <= 0 {
-        effect_create_above(ef_explosion, x, y, 2, c_lime)
-        effect_create_above(ef_explosion, x + 30, y - 20, 1, c_white)
-        effect_create_above(ef_explosion, x - 30, y + 20, 1, c_lime)
-        instance_destroy()
-    }
+        break
+
+    case 1:
+        var next_x = x + targ_x * game_speed
+        var next_y = y + targ_y * game_speed
+        
+        if (!place_meeting(next_x, y, obj_wall)) x = next_x
+        if (!place_meeting(x, next_y, obj_wall)) y = next_y
+        
+        timer -= 1 * game_speed
+        
+        if (timer <= 0) {
+            var knife = instance_create_layer(x, y, layer, obj_knife)
+            knife.direction = point_direction(x, y, obj_player.x, obj_player.y)
+            knife.speed = 14 * game_speed
+            knife.image_angle = knife.direction
+            state = 0
+            timer = base_timer
+        }
+        break
+
+    case 2:
+        timer -= 1 * game_speed
+        if (timer <= 0) {
+            state = 3
+            timer = (phase == 1) ? 12 : 6
+            obj_game_manager.boss_slow = true
+            current_dash_speed = 0
+        }
+        break
+
+    case 3:
+        var dist = point_distance(x, y, targ_x, targ_y)
+        var dir = point_direction(x, y, targ_x, targ_y)
+        
+        if (!variable_instance_exists(id, "current_dash_speed")) current_dash_speed = 0
+        
+        if (dist > 150) {
+            current_dash_speed = min(current_dash_speed + (3.5 * game_speed), 45 * game_speed)
+        } else {
+            current_dash_speed = max(current_dash_speed * 0.75, 4 * game_speed)
+        }
+        
+        var spd = min(current_dash_speed, dist)
+        
+        var next_x = x + lengthdir_x(spd, dir)
+        var next_y = y + lengthdir_y(spd, dir)
+        
+        var hit_wall = false
+        if (!place_meeting(next_x, y, obj_wall)) x = next_x else hit_wall = true
+        if (!place_meeting(x, next_y, obj_wall)) y = next_y else hit_wall = true
+        
+        timer -= 1
+        
+        if (timer <= 0) {
+            var knife = instance_create_layer(x, y, layer, obj_knife)
+            knife.direction = point_direction(x, y, obj_player.x, obj_player.y)
+            knife.speed = 16 * game_speed
+            knife.image_angle = knife.direction
+            timer = (phase == 1) ? 12 : 6
+        }
+        
+        if (dist < 5 || hit_wall) {
+            obj_game_manager.boss_slow = false
+            state = 0
+            timer = base_timer
+        }
+        break
+
+    case 4:
+        timer -= 1 * game_speed
+        image_angle += 15 * game_speed
+        effect_create_above(ef_ring, x + random_range(-30, 30), y + random_range(-30, 30), 0, c_lime)
+        
+        if (enemy_hp < target_hp) {
+            enemy_hp += (target_hp - enemy_hp) * 0.05 * game_speed
+        }
+        
+        if (timer <= 0) {
+            image_angle = 0
+            enemy_hp = target_hp
+            state = 0
+            timer = base_timer
+        }
+        break
+
+    case 5:
+        timer -= 1 
+        if (timer <= 0) {
+            state = 0
+            timer = base_timer
+        }
+        break
+
+    case 6:
+        current_dash_speed = 0
+        targ_x = 0
+        targ_y = 0
+        
+        if (!instance_exists(obj_text_box)) {
+            effect_create_above(ef_explosion, x, y, 1, c_lime)
+            instance_destroy()
+        }
+        break
 }
+
+var current_speed = point_distance(xprevious, yprevious, x, y)
+
+var target_xscale = 1 + (current_speed * 0.08)
+var target_yscale = 1 - (current_speed * 0.04)
+
+if (state == 4) {
+    target_xscale = 1.3 + dsin(current_time * 0.8) * 0.4
+    target_yscale = 1.3 - dsin(current_time * 0.8) * 0.4
+}
+
+target_xscale = clamp(target_xscale, 0.2, 3.0)
+target_yscale = clamp(target_yscale, 0.2, 3.0)
+
+var lerp_speed = clamp(0.35 * game_speed, 0, 1)
+image_xscale = lerp(image_xscale, target_xscale, lerp_speed)
+image_yscale = lerp(image_yscale, target_yscale, lerp_speed)

@@ -18,8 +18,8 @@
     {"$GMFolder":"","%Name":"sounds","folderPath":"folders/sounds.yy","name":"sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"text box","folderPath":"folders/text box.yy","name":"text box","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"tiles","folderPath":"folders/tiles.yy","name":"tiles","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"sprites","folderPath":"folders/tiles/sprites.yy","name":"sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"objects","folderPath":"folders/tiles/objects.yy","name":"objects","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"sprites","folderPath":"folders/tiles/sprites.yy","name":"sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[
     {"link":"io.gamemaker.gm_filter_greyscale-1.0.0","name":"io.gamemaker.gm_filter_greyscale-1.0.0","path":"io.gamemaker.gm_filter_greyscale-1.0.0.yyp",},
@@ -76,6 +76,7 @@
     {"id":{"name":"spr_text_box","path":"sprites/spr_text_box/spr_text_box.yy",},},
     {"id":{"name":"spr_wall_hurt","path":"sprites/spr_wall_hurt/spr_wall_hurt.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
+    {"id":{"name":"spri_player_death","path":"sprites/spri_player_death/spri_player_death.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
