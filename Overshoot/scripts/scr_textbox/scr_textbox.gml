@@ -1,6 +1,6 @@
-/// @function textbox_say(_text, [_auto_advance] (boolean), [_auto_delay] (integer))
+/// @function textbox_say(_text, [_color], [_auto_advance], [_auto_delay])
 
-function textbox_say(_text, _auto_advance = false, _auto_delay = 60) {
+function textbox_say(_text, _color = c_maroon, _auto_advance = false, _auto_delay = 60) {
     
     show_debug_message("textbox_say called")
     
@@ -10,11 +10,13 @@ function textbox_say(_text, _auto_advance = false, _auto_delay = 60) {
     
     if (is_array(_text)) {
         for (var i = 0; i < array_length(_text); i++) {
-            var _data = { text: _text[i], auto: _auto_advance, delay: _auto_delay }
+
+            var _data = { text: _text[i], color: _color, auto: _auto_advance, delay: _auto_delay }
             ds_queue_enqueue(obj_text_box.text_queue, _data)
         }
     } else {
-        var _data = { text: _text, auto: _auto_advance, delay: _auto_delay }
+
+        var _data = { text: _text, color: _color, auto: _auto_advance, delay: _auto_delay }
         ds_queue_enqueue(obj_text_box.text_queue, _data)
     }
     
@@ -32,6 +34,7 @@ function textbox_next_page() {
         var _message_data = ds_queue_dequeue(obj_text_box.text_queue)
         
         obj_text_box.text_full    = _message_data.text
+        obj_text_box.text_color   = _message_data.color 
         obj_text_box.auto_advance = _message_data.auto
         obj_text_box.auto_delay   = _message_data.delay
         

@@ -15,6 +15,8 @@
     {"name":"f_pixolde","order":3,"path":"fonts/f_pixolde/f_pixolde.yy",},
     {"name":"obj_basic","order":3,"path":"objects/obj_basic/obj_basic.yy",},
     {"name":"obj_knife","order":1,"path":"objects/obj_knife/obj_knife.yy",},
+    {"name":"obj_level_manager","order":9,"path":"objects/obj_level_manager/obj_level_manager.yy",},
+    {"name":"obj_particle_manager","order":8,"path":"objects/obj_particle_manager/obj_particle_manager.yy",},
     {"name":"obj_rating","order":1,"path":"objects/obj_rating/obj_rating.yy",},
     {"name":"obj_shatter","order":4,"path":"objects/obj_shatter/obj_shatter.yy",},
     {"name":"obj_spike","order":1,"path":"objects/obj_spike/obj_spike.yy",},

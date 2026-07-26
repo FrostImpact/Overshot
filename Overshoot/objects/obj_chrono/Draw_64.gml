@@ -6,7 +6,7 @@ var bar_height = 20
 var bar_x = (gui_w - bar_width) / 2
 var bar_y = 40
 var hp_ratio = clamp(display_hp / enemy_max_hp, 0, 1)
-var hp_color = phase == 1 ? c_lime : c_fuchsia
+var hp_color = phase == 1 ? c_lime : c_green
 
 draw_set_halign(fa_center)
 draw_set_color(c_lime)

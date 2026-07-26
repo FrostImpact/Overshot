@@ -1,6 +1,5 @@
 //https://forum.gamemaker.io/index.php?threads/screen-shatter-effect-with-voronio-diagram.105463/
-// if you want more info on how i did this
-
+//lowkey stole this code
 
 surf_spr = sprite_create_from_surface(application_surface, 0, 0, surface_get_width(application_surface), surface_get_height(application_surface), false, false, 0, 0)
 tex = sprite_get_texture(surf_spr, 0)

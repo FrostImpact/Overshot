@@ -1,5 +1,5 @@
 if (box_visible == false) {
-	exit
+    exit
 }
 
 var _base_sw = sprite_get_width(spr_text_box)
@@ -10,7 +10,7 @@ var _y = display_get_gui_height() - 64
 
 draw_sprite_stretched_ext(spr_text_box, 0, _x - (_sw / 2), _y - (_sh / 2), _sw, _sh, c_white, 1)
 
-draw_set_color(c_maroon)
+draw_set_color(text_color)
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
 

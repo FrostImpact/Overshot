@@ -13,3 +13,8 @@ view_visible[0] = true
 check = 1
 
 boss_slow = false
+
+padding = 100
+
+base_w = room_width + padding
+base_h = room_height + padding
