@@ -36,12 +36,10 @@ if (hit_cooldown <= 0) {
     }
 }
 
-//knockback cooldown tick
 if (hit_cooldown > 0) {
     hit_cooldown -= 1 * game_speed
 }
 
-//prevent enemy from going into the wall
 if (!place_meeting(x + knockback_x, y, obj_wall)) {
     x += knockback_x * game_speed
 } else {
@@ -57,7 +55,7 @@ y = clamp(y, 0, room_height)
 knockback_x *= knockback_friction
 knockback_y *= knockback_friction
 
-//squash and stretch
+
 if (hit_squash_timer > 0) {
     hit_squash_timer -= 1 * game_speed
     var _hit_ratio = hit_squash_timer / hit_squash_duration
@@ -68,7 +66,6 @@ if (hit_squash_timer > 0) {
     image_yscale = lerp(image_yscale, 1, 0.2 * game_speed)
 }
 
-//visual damage flash (white flash when hit)
 if (flash_timer > 0) {
     flash_timer -= 1 * game_speed
 }
