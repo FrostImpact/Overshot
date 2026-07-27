@@ -1,4 +1,3 @@
-// Only run the player's movement and physics if they are alive
 if (hp > 0) {
     
     var game_speed = obj_game_manager.game_speed
@@ -6,7 +5,6 @@ if (hp > 0) {
     xspeed = clamp(xspeed, -max_speed, max_speed)
     yspeed = clamp(yspeed, -max_speed, max_speed)
 
-    //check if aiming code
     if (mouse_check_button_pressed(mb_left)) {
         
         play_sound_scr("stretch")
@@ -22,13 +20,6 @@ if (hp > 0) {
         aim_check = false
     }
 
-    //if (is_aiming){
-        //xspeed = lerp(xspeed,0,game_speed)
-        //yspeed = lerp(yspeed,0,game_speed)
-        
-    //}
-
-    //on release, launch code
     if (is_aiming && mouse_check_button_released(mb_left)) {
         
         play_sound_scr("release")
@@ -41,7 +32,15 @@ if (hp > 0) {
         var _dir = point_direction(0, 0, _dx, _dy)
         xspeed = lengthdir_x(_launch_speed, _dir)
         yspeed = lengthdir_y(_launch_speed, _dir)
-        
+       
+        var time_penalty = -0.25
+		
+        with (obj_rating) {
+            room_time += time_penalty
+            popup_value = time_penalty
+            popup_duration = 60
+            popup_timer = popup_duration
+        }
     }
 
     var _move_x = xspeed * game_speed
@@ -57,7 +56,6 @@ if (hp > 0) {
         
         impact_speed = _avg_speed
         
-        //rating will wobble on horizontal collision
         with (obj_rating) {
             rating_angle = choose(-5, 5)
             rating_scale = 1.2
@@ -81,7 +79,6 @@ if (hp > 0) {
         
         impact_speed = _avg_speed
         
-        //rating will wobble on vertical collision
         with (obj_rating) {
             rating_angle = choose(-10, 10)
             rating_scale = 1.2

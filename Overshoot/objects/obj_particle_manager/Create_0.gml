@@ -27,3 +27,10 @@ part_type_speed(global.p_vortex, 2, 6, -0.15, 0)
 part_type_direction(global.p_vortex, 0, 359, 15, 0)
 part_type_blend(global.p_vortex, true)
 part_type_life(global.p_vortex, 30, 45)
+
+global.p_pulse = part_type_create();
+part_type_shape(global.p_pulse, pt_shape_ring);
+part_type_size(global.p_pulse, 0.1, 0.1, 0.1, 0); 
+part_type_color1(global.p_pulse, c_white);
+part_type_alpha2(global.p_pulse, 1, 0);
+part_type_life(global.p_pulse, 10, 15); 
