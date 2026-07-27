@@ -3,7 +3,7 @@ xspeed = 0
 yspeed = 0
 gravity_force = 0.35
 bounce = 0.7
-max_speed = 20
+max_speed = 18
 
 is_aiming = false
 aim_check = false
