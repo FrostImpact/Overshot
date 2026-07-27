@@ -9,8 +9,13 @@
   "name":"obj_bullet_enemy",
   "overriddenProperties":[],
   "parent":{
+<<<<<<< HEAD
     "name":"Overshoot",
     "path":"Overshoot.yyp",
+=======
+    "name":"enemy_shoot",
+    "path":"folders/enemies/enemy_shoot.yy",
+>>>>>>> 46d7e894695d6b030fc7074106d4d09e6e6e8d5e
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,8 +36,13 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
+<<<<<<< HEAD
     "name":"sprite_bullet",
     "path":"sprites/sprite_bullet/sprite_bullet.yy",
+=======
+    "name":"spr_bullet_enemy",
+    "path":"sprites/spr_bullet_enemy/spr_bullet_enemy.yy",
+>>>>>>> 46d7e894695d6b030fc7074106d4d09e6e6e8d5e
   },
   "spriteMaskId":null,
   "visible":true,

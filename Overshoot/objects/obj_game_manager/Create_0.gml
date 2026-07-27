@@ -10,4 +10,11 @@ view_visible[0] = true
 
 //sets everything outside of room to a color
 
-check = 0
+check = 1
+
+boss_slow = false
+
+padding = 100
+
+base_w = room_width + padding
+base_h = room_height + padding

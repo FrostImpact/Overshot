@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 draw_self();
 image_blend = c_white
 
@@ -32,4 +33,8 @@ draw_set_color(c_lime)
 draw_rectangle(_bar_x, _bar_y, _bar_x + _bar_width * _hp_ratio, _bar_y + _bar_height, false)
 
 draw_set_color(c_white)
+=======
+// Inherit the parent event
+event_inherited();
+>>>>>>> 46d7e894695d6b030fc7074106d4d09e6e6e8d5e
 

@@ -1,18 +1,25 @@
-function textbox_say(_text) {
-	
-	show_debug_message("textbox_say called")
-	
-	
+/// @function textbox_say(_text, [_color], [_auto_advance], [_auto_delay])
+
+function textbox_say(_text, _color = c_maroon, _auto_advance = false, _auto_delay = 60) {
+    
+    show_debug_message("textbox_say called")
+    
     if (!instance_exists(obj_text_box)) {
         instance_create_layer(0, 0, "Instances", obj_text_box)
     }
+    
     if (is_array(_text)) {
         for (var i = 0; i < array_length(_text); i++) {
-            ds_queue_enqueue(obj_text_box.text_queue, _text[i])
+
+            var _data = { text: _text[i], color: _color, auto: _auto_advance, delay: _auto_delay }
+            ds_queue_enqueue(obj_text_box.text_queue, _data)
         }
     } else {
-        ds_queue_enqueue(obj_text_box.text_queue, _text)
+
+        var _data = { text: _text, color: _color, auto: _auto_advance, delay: _auto_delay }
+        ds_queue_enqueue(obj_text_box.text_queue, _data)
     }
+    
     if (obj_text_box.state == TB_STATE.IDLE) {
         obj_text_box.box_visible = true
         textbox_next_page()
@@ -23,11 +30,18 @@ function textbox_next_page() {
     if (!instance_exists(obj_text_box)) return
 
     if (!ds_queue_empty(obj_text_box.text_queue)) {
-
-        obj_text_box.text_full    = ds_queue_dequeue(obj_text_box.text_queue)
+        
+        var _message_data = ds_queue_dequeue(obj_text_box.text_queue)
+        
+        obj_text_box.text_full    = _message_data.text
+        obj_text_box.text_color   = _message_data.color 
+        obj_text_box.auto_advance = _message_data.auto
+        obj_text_box.auto_delay   = _message_data.delay
+        
         obj_text_box.text_display = ""
         obj_text_box.char_index   = 0
         obj_text_box.type_timer   = 0
+        obj_text_box.auto_timer   = 0 
         obj_text_box.state        = TB_STATE.TYPING
         obj_text_box.box_visible  = true
 
@@ -66,7 +80,6 @@ function textbox_advance() {
     }
 }
 
-/// @function textbox_is_active()
 function textbox_is_active() {
     return instance_exists(obj_text_box) && obj_text_box.box_visible
 }

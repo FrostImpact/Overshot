@@ -6,7 +6,7 @@ var _hp_ratio = clamp(hp / hp_max, 0, 1)
 draw_set_color(c_dkgray)
 draw_rectangle(hp_bar_x, hp_bar_y, hp_bar_x + hp_bar_width, hp_bar_y + hp_bar_height, false)
 
-draw_set_color(merge_color(c_red, c_lime, _hp_ratio))
+draw_set_color(merge_color(c_orange, c_orange, _hp_ratio))
 draw_rectangle(hp_bar_x, hp_bar_y, hp_bar_x + (hp_bar_width * _hp_ratio), hp_bar_y + hp_bar_height, false)
 
 draw_set_color(c_white)
