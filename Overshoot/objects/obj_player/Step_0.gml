@@ -1,5 +1,5 @@
 if (hp > 0) {
-    
+	
     var game_speed = obj_game_manager.game_speed
     yspeed += gravity_force * game_speed
     xspeed = clamp(xspeed, -max_speed, max_speed)
