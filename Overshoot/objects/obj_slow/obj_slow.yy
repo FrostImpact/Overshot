@@ -10,8 +10,8 @@
   "name":"obj_slow",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemies",
-    "path":"folders/enemies.yy",
+    "name":"slow enemy",
+    "path":"folders/enemies/slow enemy.yy",
   },
   "parentObjectId":{
     "name":"obj_basic",

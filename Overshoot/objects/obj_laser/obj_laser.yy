@@ -10,8 +10,8 @@
   "name":"obj_laser",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemies",
-    "path":"folders/enemies.yy",
+    "name":"laser enemy",
+    "path":"folders/enemies/laser enemy.yy",
   },
   "parentObjectId":{
     "name":"obj_basic",

@@ -10,8 +10,8 @@
   "name":"obj_basic",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemies",
-    "path":"folders/enemies.yy",
+    "name":"basic enemy",
+    "path":"folders/enemies/basic enemy.yy",
   },
   "parentObjectId":null,
   "persistent":false,
