@@ -3,7 +3,6 @@ if (hp > 0) {
 	//temporary solution to player getting stuck inside chrono
 	//i would like to improve the collision with obj_basic so that
 	//it is universal, but alas I cannot
-	
 	if (place_meeting(x, y, obj_chrono)) {
         var _boss = instance_place(x, y, obj_chrono)
         if (_boss != noone) {
