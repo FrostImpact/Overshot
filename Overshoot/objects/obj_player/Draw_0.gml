@@ -1,4 +1,4 @@
-draw_self()
+draw_sprite_ext(sprite_index, image_index, x, y, visual_xscale, visual_yscale, visual_angle, image_blend, image_alpha)
 
 if (is_aiming) {
     var _dx = aim_start_x - mouse_x

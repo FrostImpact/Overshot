@@ -3,7 +3,7 @@ xspeed = 0
 yspeed = 0
 gravity_force = 0.35
 bounce = 0.7
-max_speed = 20
+max_speed = 18
 
 is_aiming = false
 aim_check = false
@@ -34,3 +34,7 @@ hp_bar_x = 20
 hp_bar_y = 20
 hp_bar_width = 200
 hp_bar_height = 24
+
+visual_xscale = 1
+visual_yscale = 1
+visual_angle = 0
