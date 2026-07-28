@@ -1,7 +1,7 @@
 {
   "FolderOrderSettings":[
     {"name":"enemies","order":2,"path":"folders/enemies.yy",},
-    {"name":"enemy_shoot","order":9,"path":"folders/enemies/enemy_shoot.yy",},
+    {"name":"enemy_shoot","order":6,"path":"folders/enemies/enemy_shoot.yy",},
     {"name":"mini_boss","order":2,"path":"folders/enemies/mini_boss.yy",},
     {"name":"Levels","order":1,"path":"folders/Levels.yy",},
     {"name":"player","order":3,"path":"folders/player.yy",},
@@ -21,7 +21,8 @@
     {"name":"obj_particle_manager","order":8,"path":"objects/obj_particle_manager/obj_particle_manager.yy",},
     {"name":"obj_rating","order":1,"path":"objects/obj_rating/obj_rating.yy",},
     {"name":"obj_shatter","order":4,"path":"objects/obj_shatter/obj_shatter.yy",},
-    {"name":"obj_shield","order":10,"path":"objects/obj_shield/obj_shield.yy",},
+    {"name":"obj_shield","order":7,"path":"objects/obj_shield/obj_shield.yy",},
+    {"name":"obj_slow","order":8,"path":"objects/obj_slow/obj_slow.yy",},
     {"name":"obj_spike","order":1,"path":"objects/obj_spike/obj_spike.yy",},
     {"name":"obj_wall_hurt","order":3,"path":"objects/obj_wall_hurt/obj_wall_hurt.yy",},
     {"name":"obj_wall","order":2,"path":"objects/obj_wall/obj_wall.yy",},
