@@ -64,7 +64,7 @@ if (state == 1) {
     part_particles_create(global.p_sys, x + random_range(-15, 15), y + random_range(-15, 15), global.p_spark, 1);
 } else if (state == 3) {
     part_type_orientation(global.p_trail, visual_angle, visual_angle, 0, 0, false);
-    // Updated particle scale to match visual variables
+
     part_type_scale(global.p_trail, visual_xscale, visual_yscale);
     part_particles_create(global.p_sys, x, y, global.p_trail, 1);
 }

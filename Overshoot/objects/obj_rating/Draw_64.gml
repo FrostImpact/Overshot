@@ -19,7 +19,6 @@ var _pulse = (_pct < 0.25) ? 1 + sin(current_time / 80) * 0.15 : 1
 var _draw_scale = timer_scale * _pulse
 var _timer_color = merge_color(c_red, make_color_rgb(255, 240, 190), _pct)
 
-draw_set_font(f_pixolde)
 draw_set_halign(fa_center)
 draw_set_valign(fa_middle)
 

@@ -7,8 +7,8 @@ targ_x = 0
 targ_y = 0
 special_cooldown = 0
 
-enemy_hp = 150
-enemy_max_hp = 150
+enemy_hp = 300
+enemy_max_hp = 300
 
 phase = 1
 
