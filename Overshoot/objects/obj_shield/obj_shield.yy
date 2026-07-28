@@ -10,8 +10,8 @@
   "name":"obj_shield",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemies",
-    "path":"folders/enemies.yy",
+    "name":"Overshoot",
+    "path":"Overshoot.yyp",
   },
   "parentObjectId":{
     "name":"obj_basic",

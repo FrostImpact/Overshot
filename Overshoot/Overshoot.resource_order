@@ -21,7 +21,7 @@
     {"name":"obj_particle_manager","order":8,"path":"objects/obj_particle_manager/obj_particle_manager.yy",},
     {"name":"obj_rating","order":1,"path":"objects/obj_rating/obj_rating.yy",},
     {"name":"obj_shatter","order":4,"path":"objects/obj_shatter/obj_shatter.yy",},
-    {"name":"obj_shield","order":6,"path":"objects/obj_shield/obj_shield.yy",},
+    {"name":"obj_shield","order":10,"path":"objects/obj_shield/obj_shield.yy",},
     {"name":"obj_spike","order":1,"path":"objects/obj_spike/obj_spike.yy",},
     {"name":"obj_wall_hurt","order":3,"path":"objects/obj_wall_hurt/obj_wall_hurt.yy",},
     {"name":"obj_wall","order":2,"path":"objects/obj_wall/obj_wall.yy",},

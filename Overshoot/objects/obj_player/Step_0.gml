@@ -1,4 +1,25 @@
 if (hp > 0) {
+	
+	//temporary solution to player getting stuck inside chrono
+	//i would like to improve the collision with obj_basic so that
+	//it is universal, but alas I cannot
+	if (place_meeting(x, y, obj_chrono)) {
+        var _boss = instance_place(x, y, obj_chrono)
+        if (_boss != noone) {
+			
+            var _push_dir = point_direction(_boss.x, _boss.y, x, y)
+			
+            if (x == _boss.x && y == _boss.y) {
+                _push_dir = random(360)
+            }
+			
+            while (place_meeting(x, y, obj_chrono)) {
+				
+                x += lengthdir_x(1, _push_dir)
+                y += lengthdir_y(1, _push_dir)
+            }
+        }
+    }
     
     var game_speed = obj_game_manager.game_speed
     yspeed += gravity_force * game_speed
@@ -133,6 +154,9 @@ if (hp > 0) {
         _target_yscale = 1 - stretch_amount * _speed_ratio * 0.5
     }
 
+	//more efficient to do this via draw sprite_ext 
+	//because doing it in step caused to have a bug
+	//where it would expand into a wall and get stuck
     visual_xscale = lerp(visual_xscale, _target_xscale, scale_lerp_speed * game_speed)
     visual_yscale = lerp(visual_yscale, _target_yscale, scale_lerp_speed * game_speed)
 }
