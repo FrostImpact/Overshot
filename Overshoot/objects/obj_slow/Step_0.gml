@@ -36,4 +36,3 @@ if (slowed>slow_time)
 	slowed=0;
 	slowing=false;
 }
-
