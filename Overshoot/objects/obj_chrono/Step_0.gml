@@ -24,7 +24,8 @@ if (obj_player.aim_check && shatter_cooldown <= 0) {
         gm.boss_slow = false; 
         
         textbox_say(["You think you can slow down time against me?", "ME??!"], c_lime, true, 30);
-        instance_create_layer(0, 0, layer, obj_shatter);
+       
+	   instance_create_layer(0, 0, layer, obj_shatter);
         part_particles_create(global.p_sys, x, y, global.p_spark, 25);
     } else if (aim_punish_timer > 60) {
         part_particles_create(global.p_sys, x + random_range(-10, 10), y + random_range(-10, 10), global.p_spark, 1);

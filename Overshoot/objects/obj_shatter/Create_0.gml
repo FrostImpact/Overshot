@@ -7,7 +7,7 @@ w = surface_get_width(application_surface)
 h = surface_get_height(application_surface)
 cx = w / 2
 cy = h / 2
-timer = 120
+timer = 60
 
 for (var i = 0 ; i < 8 ; i += 1) {
     sx[i] = 0

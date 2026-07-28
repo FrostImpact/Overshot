@@ -10,8 +10,8 @@
   "name":"obj_spike",
   "overriddenProperties":[],
   "parent":{
-    "name":"objects",
-    "path":"folders/tiles/objects.yy",
+    "name":"blocks",
+    "path":"folders/obstacles/blocks.yy",
   },
   "parentObjectId":null,
   "persistent":false,

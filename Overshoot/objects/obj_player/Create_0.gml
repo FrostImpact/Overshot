@@ -8,7 +8,7 @@ max_speed = 18
 is_aiming = false
 aim_check = false
 launch_power_scale = 0.15
-max_launch_speed = 20
+max_launch_speed = 25
 aim_start_x = 0
 aim_start_y = 0
 

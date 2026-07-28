@@ -4,15 +4,19 @@ var game_speed = obj_game_manager.game_speed
 if (hit_cooldown <= 0) {
     var _hit = false
     var _enemy_id = id
+	
     with (obj_player) {
+		
         if (place_meeting(x + xspeed, y, _enemy_id) || place_meeting(x, y + yspeed, _enemy_id)) {
             _hit = true
 			
-			part_particles_create(global.p_sys, obj_basic.x, obj_basic.y, global.p_trail, 15);
-			
         }
     }
+	
     if (_hit) {
+		
+					
+		part_particles_create(global.p_sys, x, y, global.p_trail, 15);
 		
         var _player_speed = point_distance(0, 0, obj_player.xspeed, obj_player.yspeed)
         var _damage = _player_speed * damage_scale

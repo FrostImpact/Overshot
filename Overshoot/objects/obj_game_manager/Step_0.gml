@@ -38,8 +38,10 @@ if (check = 0) {
 
 if obj_player.aim_check == true {
     game_speed = 0.2
+	
 } else if boss_slow == true {
     game_speed = 0.5
+	
 } else {
     game_speed = 1
 }

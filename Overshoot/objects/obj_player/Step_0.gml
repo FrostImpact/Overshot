@@ -1,22 +1,27 @@
 if (hp > 0) {
-	
-	//temporary solution to player getting stuck inside chrono
-	//i would like to improve the collision with obj_basic so that
-	//it is universal, but alas I cannot
-	if (place_meeting(x, y, obj_chrono)) {
+    
+//temporary solution to player getting stuck inside chrono
+//i would like to improve the collision with obj_basic so that
+//it is universal, but alas I cannot
+
+    if (place_meeting(x, y, obj_chrono)) {
         var _boss = instance_place(x, y, obj_chrono)
         if (_boss != noone) {
-			
+            
             var _push_dir = point_direction(_boss.x, _boss.y, x, y)
-			
+            
             if (x == _boss.x && y == _boss.y) {
                 _push_dir = random(360)
             }
-			
+            
             while (place_meeting(x, y, obj_chrono)) {
-				
-                x += lengthdir_x(1, _push_dir)
-                y += lengthdir_y(1, _push_dir)
+                
+                if (!place_meeting(x,y,obj_wall)){
+                    x += lengthdir_x(1, _push_dir)
+                    y += lengthdir_y(1, _push_dir)
+                }
+                
+                break
             }
         }
     }
@@ -28,35 +33,45 @@ if (hp > 0) {
 
     if (mouse_check_button_pressed(mb_left)) {
         play_sound_scr("stretch")
-        is_aiming = true
-        aim_start_x = mouse_x
-        aim_start_y = mouse_y
+		
         aim_check = true
+		
+        aim_drag_x = 0
+        aim_drag_y = 0
+		
+        window_mouse_set(window_get_width() / 2, window_get_height() / 2)
+
     }
     
-    if (mouse_check_button_released(mb_left)) {
-        aim_check = false
-    }
-
-    if (is_aiming && mouse_check_button_released(mb_left)) {
-        play_sound_scr("release")
+    if (aim_check) {
+        var _cx = window_get_width() / 2
+        var _cy = window_get_height() / 2
         
-        is_aiming = false
-        var _dx = aim_start_x - mouse_x
-        var _dy = aim_start_y - mouse_y
-        var _dist = point_distance(0, 0, _dx, _dy)
-        var _launch_speed = min(_dist * launch_power_scale, max_launch_speed)
-        var _dir = point_direction(0, 0, _dx, _dy)
-        xspeed = lengthdir_x(_launch_speed, _dir)
-        yspeed = lengthdir_y(_launch_speed, _dir)
-       
-        var time_penalty = -0.25
+        aim_drag_x += _cx - window_mouse_get_x()
+        aim_drag_y += _cy - window_mouse_get_y()
         
-        with (obj_rating) {
-            room_time += time_penalty
-            popup_value = time_penalty
-            popup_duration = 60
-            popup_timer = popup_duration
+        window_mouse_set(_cx, _cy)
+        
+        if (mouse_check_button_released(mb_left)) {
+            play_sound_scr("release")
+            
+            aim_check = false
+			
+            
+            var _dist = point_distance(0, 0, aim_drag_x, aim_drag_y)
+            var _launch_speed = min(_dist * launch_power_scale * 0.2, max_launch_speed)
+            var _dir = point_direction(0, 0, aim_drag_x, aim_drag_y)
+            xspeed = lengthdir_x(_launch_speed, _dir)
+            yspeed = lengthdir_y(_launch_speed, _dir)
+           
+            var time_penalty = -0.25
+            
+            with (obj_rating) {
+                room_time += time_penalty
+                popup_value = time_penalty
+                popup_duration = 60
+                popup_timer = popup_duration
+            }
         }
     }
 
@@ -153,10 +168,12 @@ if (hp > 0) {
         _target_xscale = 1 + stretch_amount * _speed_ratio
         _target_yscale = 1 - stretch_amount * _speed_ratio * 0.5
     }
+	
+//more efficient to do this via draw sprite_ext 
+//because doing it in step caused to have a bug
+//where it would expand into a wall and get stuck
 
-	//more efficient to do this via draw sprite_ext 
-	//because doing it in step caused to have a bug
-	//where it would expand into a wall and get stuck
     visual_xscale = lerp(visual_xscale, _target_xscale, scale_lerp_speed * game_speed)
     visual_yscale = lerp(visual_yscale, _target_yscale, scale_lerp_speed * game_speed)
+    
 }

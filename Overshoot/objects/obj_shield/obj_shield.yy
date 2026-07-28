@@ -10,8 +10,8 @@
   "name":"obj_shield",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemies",
-    "path":"folders/enemies.yy",
+    "name":"shield enemy",
+    "path":"folders/enemies/shield enemy.yy",
   },
   "parentObjectId":{
     "name":"obj_basic",
@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy_shield",
-    "path":"sprites/spr_enemy_shield/spr_enemy_shield.yy",
+    "name":"spr_shield",
+    "path":"sprites/spr_shield/spr_shield.yy",
   },
   "spriteMaskId":{
     "name":"spr_basic",
