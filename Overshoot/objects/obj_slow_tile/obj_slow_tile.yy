@@ -1,13 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_ground",
-  "eventList":[],
+  "%Name":"obj_slow_tile",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":73,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_ground",
+  "name":"obj_slow_tile",
   "overriddenProperties":[],
   "parent":{
-    "name":"blocks",
-    "path":"folders/obstacles/blocks.yy",
+    "name":"tiles",
+    "path":"folders/obstacles/tiles.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_wall",
-    "path":"sprites/spr_wall/spr_wall.yy",
+    "name":"spr_slow_tile",
+    "path":"sprites/spr_slow_tile/spr_slow_tile.yy",
   },
   "spriteMaskId":null,
   "visible":true,

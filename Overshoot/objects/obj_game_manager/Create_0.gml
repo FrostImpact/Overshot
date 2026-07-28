@@ -18,3 +18,6 @@ padding = 100
 
 base_w = room_width + padding
 base_h = room_height + padding
+
+window_set_cursor(cr_none)
+window_mouse_set_locked(true)

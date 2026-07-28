@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"sprites",
-    "path":"folders/tiles/sprites.yy",
+    "path":"folders/obstacles/blocks/sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
