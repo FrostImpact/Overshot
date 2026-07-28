@@ -1,3 +1,5 @@
+
+
 display_hp = lerp(display_hp, enemy_hp, 0.1)
 
 var gui_w = display_get_gui_width()

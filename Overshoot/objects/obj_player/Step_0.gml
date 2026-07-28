@@ -33,12 +33,12 @@ if (hp > 0) {
 
     if (mouse_check_button_pressed(mb_left)) {
         play_sound_scr("stretch")
-		
+        
         aim_check = true
-		
+        
         aim_drag_x = 0
         aim_drag_y = 0
-		
+        
         window_mouse_set(window_get_width() / 2, window_get_height() / 2)
 
     }
@@ -56,14 +56,13 @@ if (hp > 0) {
             play_sound_scr("release")
             
             aim_check = false
-			
             
             var _dist = point_distance(0, 0, aim_drag_x, aim_drag_y)
             var _launch_speed = min(_dist * launch_power_scale * 0.2, max_launch_speed)
             var _dir = point_direction(0, 0, aim_drag_x, aim_drag_y)
             xspeed = lengthdir_x(_launch_speed, _dir)
             yspeed = lengthdir_y(_launch_speed, _dir)
-           
+            
             var time_penalty = -0.25
             
             with (obj_rating) {
@@ -84,6 +83,7 @@ if (hp > 0) {
         visual_angle = point_direction(0, 0, xspeed, yspeed)
     }
     
+    // --- HORIZONTAL COLLISION ---
     if (place_meeting(x + _move_x, y, obj_wall) || place_meeting(x + _move_x, y, obj_basic)) {
         var _sign_x = sign(_move_x)
         
@@ -93,7 +93,8 @@ if (hp > 0) {
             }
         }
         
-        impact_speed = _avg_speed
+        // FIX: Only calculate horizontal impact speed
+        impact_speed = abs(xspeed)
         
         with (obj_rating) {
             rating_angle = choose(-5, 5)
@@ -118,6 +119,7 @@ if (hp > 0) {
         x += _move_x
     }
     
+    // --- VERTICAL COLLISION ---
     if (place_meeting(x, y + _move_y, obj_wall) || place_meeting(x, y + _move_y, obj_basic) || place_meeting(x, y + _move_y, obj_ground)) {
         var _sign_y = sign(_move_y)
         
@@ -127,7 +129,8 @@ if (hp > 0) {
             }
         }
         
-        impact_speed = _avg_speed
+        // FIX: Only calculate vertical impact speed
+        impact_speed = abs(yspeed)
         
         with (obj_rating) {
             rating_angle = choose(-10, 10)
@@ -158,17 +161,27 @@ if (hp > 0) {
 
     var _target_xscale = 1
     var _target_yscale = 1
+    
+  
+    var _on_ground = place_meeting(x, y + 2, obj_wall)
 
     if (squash_timer > 0) {
+		
         squash_timer -= 1
         var _squash_ratio = squash_timer / squash_duration
         _target_xscale = 1 - squash_amount * _squash_ratio
         _target_yscale = 1 + squash_amount * _squash_ratio
+		
+    } else if (_on_ground && abs(yspeed) <= 1) {
+
+        _target_xscale = 1
+        _target_yscale = 1
     } else {
+
         _target_xscale = 1 + stretch_amount * _speed_ratio
         _target_yscale = 1 - stretch_amount * _speed_ratio * 0.5
     }
-	
+    
 //more efficient to do this via draw sprite_ext 
 //because doing it in step caused to have a bug
 //where it would expand into a wall and get stuck

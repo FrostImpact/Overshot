@@ -17,3 +17,7 @@ display_hp = enemy_hp
 
 aim_punish_timer = 0
 shatter_cooldown = 0
+
+visual_xscale = 1
+visual_yscale = 1
+visual_angle = 0

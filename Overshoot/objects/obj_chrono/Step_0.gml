@@ -1,14 +1,25 @@
-event_inherited();
+event_inherited()
 
-var gm = obj_game_manager;
-var g_spd = gm.game_speed;
-var px = obj_player.x;
-var py = obj_player.y;
+var gm = obj_game_manager
+var g_spd = gm.game_speed
+var px = obj_player.x
+var py = obj_player.y
 
-image_angle = point_direction(x, y, px, py);
+if (place_meeting(x, y, obj_wall)) {
+    for (var i = 1; i < 20; i++) {
+        if (!place_meeting(x + i, y, obj_wall)) { x += i; break; }
+        if (!place_meeting(x - i, y, obj_wall)) { x -= i; break; }
+        if (!place_meeting(x, y + i, obj_wall)) { y += i; break; }
+        if (!place_meeting(x, y - i, obj_wall)) { y -= i; break; }
+    }
+}
 
-shatter_cooldown = max(0, shatter_cooldown - g_spd);
-special_cooldown = max(0, special_cooldown - g_spd);
+if (state != 4 && state != 7) {
+    visual_angle = point_direction(x, y, px, py)
+}
+
+shatter_cooldown = max(0, shatter_cooldown - g_spd)
+special_cooldown = max(0, special_cooldown - g_spd)
 
 if (obj_player.aim_check && shatter_cooldown <= 0) {
     aim_punish_timer++;
@@ -25,7 +36,7 @@ if (obj_player.aim_check && shatter_cooldown <= 0) {
         
         textbox_say(["You think you can slow down time against me?", "ME??!"], c_lime, true, 30);
        
-	   instance_create_layer(0, 0, layer, obj_shatter);
+        instance_create_layer(0, 0, layer, obj_shatter);
         part_particles_create(global.p_sys, x, y, global.p_spark, 25);
     } else if (aim_punish_timer > 60) {
         part_particles_create(global.p_sys, x + random_range(-10, 10), y + random_range(-10, 10), global.p_spark, 1);
@@ -52,8 +63,9 @@ if (state != 6) {
 if (state == 1) {
     part_particles_create(global.p_sys, x + random_range(-15, 15), y + random_range(-15, 15), global.p_spark, 1);
 } else if (state == 3) {
-    part_type_orientation(global.p_trail, image_angle, image_angle, 0, 0, false);
-    part_type_scale(global.p_trail, image_xscale, image_yscale);
+    part_type_orientation(global.p_trail, visual_angle, visual_angle, 0, 0, false);
+    // Updated particle scale to match visual variables
+    part_type_scale(global.p_trail, visual_xscale, visual_yscale);
     part_particles_create(global.p_sys, x, y, global.p_trail, 1);
 }
 
@@ -72,16 +84,17 @@ switch (state) {
                     state = 2;
                     timer = (phase == 1) ? 20 : 12;
                     
-                    var dir = image_angle + random_range(-30, 30); // Reused image_angle
+                    var dir = visual_angle + random_range(-30, 30);
                     targ_x = x;
                     targ_y = y;
-                                    
+                                        
                     while (!place_meeting(targ_x, targ_y, obj_wall) && clamp(targ_x, 1, room_width - 1) == targ_x && clamp(targ_y, 1, room_height - 1) == targ_y) {
                         targ_x += lengthdir_x(16, dir);
                         targ_y += lengthdir_y(16, dir);
                     }
-                    targ_x -= lengthdir_x(16, dir);
-                    targ_y -= lengthdir_y(16, dir);
+                   
+                    targ_x -= lengthdir_x(24, dir);
+                    targ_y -= lengthdir_y(24, dir);
                 } else {
                     state = 7;
                     timer = 25; 
@@ -89,8 +102,8 @@ switch (state) {
             } else {
                 state = 1;
                 timer = 15;
-                targ_x = lengthdir_x(18, image_angle);
-                targ_y = lengthdir_y(18, image_angle);
+                targ_x = lengthdir_x(18, visual_angle);
+                targ_y = lengthdir_y(18, visual_angle);
             }
         }
         break;
@@ -105,7 +118,7 @@ switch (state) {
         timer -= g_spd;
         if (timer <= 0) {
             var knife = instance_create_layer(x, y, layer, obj_knife);
-            knife.direction = image_angle; 
+            knife.direction = visual_angle; 
             knife.speed = 14 * g_spd;
             knife.image_angle = knife.direction;
             
@@ -134,7 +147,7 @@ switch (state) {
     case 3:
         var dist = point_distance(x, y, targ_x, targ_y);
         var dir = point_direction(x, y, targ_x, targ_y);
-       
+        
         current_dash_speed = (dist > 150) ? min(current_dash_speed + (3.5 * g_spd), 45 * g_spd) : max(current_dash_speed * 0.75, 4 * g_spd);
         
         var spd = min(current_dash_speed, dist);
@@ -148,7 +161,7 @@ switch (state) {
         timer -= g_spd;
         if (timer <= 0) {
             var knife = instance_create_layer(x, y, layer, obj_knife);
-            knife.direction = image_angle;
+            knife.direction = visual_angle;
             knife.speed = 16 * g_spd;
             knife.image_angle = knife.direction;
             timer = (phase == 1) ? 6 : 4;
@@ -164,7 +177,7 @@ switch (state) {
 
     case 4:
         timer -= g_spd;
-        image_angle += (45 - (timer * 0.35)) * g_spd;
+        visual_angle += (45 - (timer * 0.35)) * g_spd;
         
         var s_dist = 30 + (timer * 0.8);
         var s_dir = random(360);
@@ -173,7 +186,7 @@ switch (state) {
         if (enemy_hp < target_hp) enemy_hp += (target_hp - enemy_hp) * 0.05 * g_spd;
         
         if (timer <= 0) {
-            image_angle = 0;
+            visual_angle = 0;
             enemy_hp = target_hp;
             state = 0;
             timer = base_timer;
@@ -195,7 +208,7 @@ switch (state) {
         
     case 7:
         timer -= g_spd;
-        image_angle += 25 * g_spd; 
+        visual_angle += 25 * g_spd; 
         
         if (timer <= 0) {
             for (var i = 0; i < 360; i += 45) {
@@ -217,5 +230,7 @@ var tx = (state == 4) ? 1.4 + dsin(current_time * 0.8) * 0.6 : 1 + (c_spd * 0.02
 var ty = (state == 4) ? 1.4 - dsin(current_time * 0.8) * 0.6 : 1 - (c_spd * 0.015);
 
 var lerp_spd = clamp(0.4 * g_spd, 0, 1);
-image_xscale = lerp(image_xscale, clamp(tx, 0.4, 2.5), lerp_spd);
-image_yscale = lerp(image_yscale, clamp(ty, 0.4, 2.5), lerp_spd);
+
+
+visual_xscale = lerp(visual_xscale, clamp(tx, 0.4, 2.5), lerp_spd);
+visual_yscale = lerp(visual_yscale, clamp(ty, 0.4, 2.5), lerp_spd);

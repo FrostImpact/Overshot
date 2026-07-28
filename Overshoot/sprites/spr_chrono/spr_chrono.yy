@@ -2,7 +2,7 @@
   "$GMSprite":"v2",
   "%Name":"spr_chrono",
   "bboxMode":2,
-  "bbox_bottom":49,
+  "bbox_bottom":50,
   "bbox_left":13,
   "bbox_right":50,
   "bbox_top":12,
