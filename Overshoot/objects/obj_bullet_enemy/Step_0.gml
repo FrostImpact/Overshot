@@ -1,3 +1,7 @@
+if (!object_exists(obj_bullet_enemy))
+{
+	instance_destroy();
+}
 player=point_direction(x,y,obj_player.x,obj_player.y);
 if (dir>=360)
 {

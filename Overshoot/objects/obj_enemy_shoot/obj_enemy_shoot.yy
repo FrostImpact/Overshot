@@ -10,8 +10,8 @@
   "name":"obj_enemy_shoot",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemy_shoot",
-    "path":"folders/enemies/enemy_shoot.yy",
+    "name":"enemies",
+    "path":"folders/enemies.yy",
   },
   "parentObjectId":{
     "name":"obj_basic",
