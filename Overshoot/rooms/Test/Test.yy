@@ -84,8 +84,8 @@
   ],
   "name":"Test",
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"Levels",
+    "path":"folders/Levels.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

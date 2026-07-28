@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"enemies",
+    "path":"folders/enemies.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
