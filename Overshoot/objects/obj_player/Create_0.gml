@@ -34,3 +34,7 @@ hp_bar_x = 20
 hp_bar_y = 20
 hp_bar_width = 200
 hp_bar_height = 24
+
+visual_xscale = 1
+visual_yscale = 1
+visual_angle = 0
