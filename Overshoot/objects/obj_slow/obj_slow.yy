@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_shield",
+  "%Name":"obj_slow",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_shield",
+  "name":"obj_slow",
   "overriddenProperties":[],
   "parent":{
-    "name":"enemies",
-    "path":"folders/enemies.yy",
+    "name":"Overshoot",
+    "path":"Overshoot.yyp",
   },
   "parentObjectId":{
     "name":"obj_basic",
@@ -35,12 +35,9 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy_shield",
-    "path":"sprites/spr_enemy_shield/spr_enemy_shield.yy",
+    "name":"spr_slow",
+    "path":"sprites/spr_slow/spr_slow.yy",
   },
-  "spriteMaskId":{
-    "name":"spr_basic",
-    "path":"sprites/spr_basic/spr_basic.yy",
-  },
+  "spriteMaskId":null,
   "visible":true,
 }
