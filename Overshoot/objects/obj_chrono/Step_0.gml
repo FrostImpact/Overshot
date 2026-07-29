@@ -138,8 +138,10 @@ switch (state) {
         if (timer <= 0) {
             state = 3;
             timer = (phase == 1) ? 12 : 8;
+			
             gm.boss_slow = true;
             current_dash_speed = 0;
+			
             part_particles_create(global.p_sys, x, y, global.p_spark, 15);
         }
         break;

@@ -40,6 +40,7 @@
     {"name":"spr_chrono","order":2,"path":"sprites/spr_chrono/spr_chrono.yy",},
     {"name":"spr_knife","order":3,"path":"sprites/spr_knife/spr_knife.yy",},
     {"name":"spr_laser","order":1,"path":"sprites/spr_laser/spr_laser.yy",},
+    {"name":"spr_pause_icon","order":11,"path":"sprites/spr_pause_icon/spr_pause_icon.yy",},
     {"name":"spr_player","order":1,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_shield","order":1,"path":"sprites/spr_shield/spr_shield.yy",},
     {"name":"spr_slow","order":1,"path":"sprites/spr_slow/spr_slow.yy",},

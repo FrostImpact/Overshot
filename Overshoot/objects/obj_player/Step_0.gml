@@ -1,4 +1,4 @@
-if (hp > 0) {
+if (hp > 0) and (global.paused == false) {
     
 //temporary solution to player getting stuck inside chrono
 //i would like to improve the collision with obj_basic so that
