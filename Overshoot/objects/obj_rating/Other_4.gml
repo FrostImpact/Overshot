@@ -25,7 +25,6 @@ if global.curr_room = 0{
 if global.curr_room = 1{
 	
 	return
-	
 }
 
 else {
