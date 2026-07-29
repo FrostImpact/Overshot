@@ -9,8 +9,8 @@
   "name":"obj_bullet_enemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"shoot enemy",
+    "path":"folders/enemies/shoot enemy.yy",
   },
   "parentObjectId":null,
   "persistent":false,

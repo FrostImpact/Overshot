@@ -1,4 +1,4 @@
-var _drag = 1.1
+var _drag = 1.15
 
 with (other) {
     xspeed *= _drag

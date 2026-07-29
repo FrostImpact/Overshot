@@ -23,6 +23,31 @@ if keyboard_check_pressed(ord("4"))
 	textbox_say(["Level 4"], c_maroon, true, 60)
 }
 
+if keyboard_check_pressed(ord("5"))
+{
+    room_goto(Level5)
+	textbox_say(["Level 5"], c_maroon, true, 60)
+}
+
+if keyboard_check_pressed(ord("6"))
+{
+    room_goto(Level8)
+	textbox_say(["Level 6"], c_maroon, true, 60)
+}
+
+if keyboard_check_pressed(ord("7"))
+{
+    room_goto(Mini_Boss_Room)
+	textbox_say(["Mini Boss Room"], c_maroon, true, 60)
+}
+
+if keyboard_check_pressed(ord("8"))
+{
+    room_goto(Level6)
+	textbox_say(["level 8"], c_maroon, true, 60)
+}
+
+
 if keyboard_check_pressed(ord("9"))
 {
     room_goto(Level9)

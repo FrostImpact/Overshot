@@ -10,8 +10,8 @@
   "name":"obj_enemy_shoot",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"shoot enemy",
+    "path":"folders/enemies/shoot enemy.yy",
   },
   "parentObjectId":{
     "name":"obj_basic",
