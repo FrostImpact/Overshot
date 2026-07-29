@@ -1,7 +1,3 @@
-if (!object_exists(obj_bullet_enemy))
-{
-	instance_destroy();
-}
 player=point_direction(x,y,obj_player.x,obj_player.y);
 if (dir>=360)
 {
@@ -13,24 +9,31 @@ if (dir<0)
 }
 if ((dir>player && dir-player<180)||(dir<player && player-dir>180))
 {
-	dir-=5;
+	dir-=2;
 }
 else
 {
-	dir+=5;
+	dir+=2;
 }
 xspeed=lengthdir_x(spe,dir);
 yspeed=lengthdir_y(spe,dir);
 x+=xspeed;
 y+=yspeed;
 time1+=delta_time/1000000;
-if (time1>=3 || place_meeting(x,y,obj_player))
+if (time1>=3)
 {
-	if  (place_meeting(x,y,obj_player))
-	{
-		obj_player.hp-=0.1;
-	}
 	instance_destroy();
 	//add animation later!!!!
 }
 image_angle=dir;
+
+if (place_meeting(x,y,obj_player))
+{
+	obj_player.hp-=5;
+	instance_destroy();
+}
+
+if (place_meeting(x,y,obj_wall))
+{
+	instance_destroy();
+}

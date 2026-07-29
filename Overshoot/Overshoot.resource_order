@@ -20,6 +20,8 @@
   ],
   "ResourceOrderSettings":[
     {"name":"f_pixolde","order":3,"path":"fonts/f_pixolde/f_pixolde.yy",},
+    {"name":"obj_bullet_enemy","order":14,"path":"objects/obj_bullet_enemy/obj_bullet_enemy.yy",},
+    {"name":"obj_enemy_shoot","order":12,"path":"objects/obj_enemy_shoot/obj_enemy_shoot.yy",},
     {"name":"obj_fast_tile","order":2,"path":"objects/obj_fast_tile/obj_fast_tile.yy",},
     {"name":"obj_knife","order":1,"path":"objects/obj_knife/obj_knife.yy",},
     {"name":"obj_level_manager","order":9,"path":"objects/obj_level_manager/obj_level_manager.yy",},
@@ -41,6 +43,7 @@
     {"name":"scr_textbox","order":1,"path":"scripts/scr_textbox/scr_textbox.yy",},
     {"name":"spr_basic","order":1,"path":"sprites/spr_basic/spr_basic.yy",},
     {"name":"spr_chrono","order":2,"path":"sprites/spr_chrono/spr_chrono.yy",},
+    {"name":"spr_enemy","order":13,"path":"sprites/spr_enemy/spr_enemy.yy",},
     {"name":"spr_fast_tile","order":1,"path":"sprites/spr_fast_tile/spr_fast_tile.yy",},
     {"name":"spr_knife","order":3,"path":"sprites/spr_knife/spr_knife.yy",},
     {"name":"spr_laser","order":1,"path":"sprites/spr_laser/spr_laser.yy",},
@@ -53,5 +56,6 @@
     {"name":"spr_wall_hurt","order":2,"path":"sprites/spr_wall_hurt/spr_wall_hurt.yy",},
     {"name":"spr_wall","order":1,"path":"sprites/spr_wall/spr_wall.yy",},
     {"name":"spri_player_death","order":3,"path":"sprites/spri_player_death/spri_player_death.yy",},
+    {"name":"sprite_bullet","order":15,"path":"sprites/sprite_bullet/sprite_bullet.yy",},
   ],
 }
