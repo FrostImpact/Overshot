@@ -1,12 +1,14 @@
 //getting room number
 
-var _room_name = room_get_name(room)
-var _last_char = string_char_at(_room_name, string_length(_room_name))
+if room != Starting_Room {
+	var _room_name = room_get_name(room)
+	var _last_char = string_char_at(_room_name, string_length(_room_name))
+}
 
 
 //lv0 is the boss level
 //last time is boss level time
-room_times = [120,60,60,60,60,60,60,60,60,]
+room_times = [120,60,60,60,60,60,60,60,60]
 
 global.curr_room = real(_last_char)
 

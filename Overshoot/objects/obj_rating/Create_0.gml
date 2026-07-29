@@ -1,5 +1,3 @@
-
-
 image_speed = 0
 
 popup_value = 0
