@@ -61,6 +61,7 @@ if global.paused == true{
 	game_speed = 0
 	
 	layer_set_visible("FX_Bullet_Time", true)
+	layer_set_visible("FX_Boss_Bullet_Time", false)
 }
 
 else if obj_player.aim_check == true {
@@ -96,6 +97,10 @@ if instance_exists(obj_player) {
     if obj_player.aim_check == true {
         target = 0.95
     }
+	
+	if global.paused == true{
+		target = 0.95
+	}
 }
 
 new_w = lerp(camera_get_view_width(cam), base_w * target, 0.1)

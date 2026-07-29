@@ -24,3 +24,5 @@ global.paused = false
 
 window_set_cursor(cr_none)
 window_mouse_set_locked(true)
+
+window_set_size(960,540)
