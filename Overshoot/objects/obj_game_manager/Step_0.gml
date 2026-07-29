@@ -21,37 +21,73 @@ if (instance_exists(obj_player)) {
     }
 }
 	
-
+//restart
 	
-
-
-
-if (check = 0) {
-	textbox_say(["Hello! Welcome to OVERSHOOT, a game where you... launch yourself at balls!",
-				"Oh look, one of those dirty red scumbags...",
-				"Do me a favour and... get rid of it.",
-				"(Click and drag back your mouse to launch yourself)"])
-	check = 1
+if (keyboard_check_pressed(ord("R"))){
+	
+	room_restart()
+	
 }
+
+//pause 
+
+if (keyboard_check_pressed(vk_escape)) {
+	
+	if global.paused == false{
+		global.paused = true	
+		
+		show_debug_message("paused")
+		
+		window_set_cursor(cr_default)
+		window_mouse_set_locked(false)
+	}
+	
+	else {	
+		global.paused = false	
+		
+		window_set_cursor(cr_none)
+		window_mouse_set_locked(true)
+		
+		show_debug_message("unpaused")
+	}
+	
+}
+
+
 
 //bullet time managers
 
-if obj_player.aim_check == true {
+if global.paused == true{
+	game_speed = 0
+	
+	layer_set_visible("FX_Bullet_Time", true)
+	layer_set_visible("FX_Boss_Bullet_Time", false)
+}
+
+else if obj_player.aim_check == true {
     game_speed = 0.2
 	
-} else if boss_slow == true {
+	layer_set_visible("FX_Bullet_Time", true)
+	
+} 
+
+else if boss_slow == true {
     game_speed = 0.5
 	
-} else {
+	layer_set_visible("FX_Boss_Bullet_Time", true)
+	
+}
+
+ else {
     game_speed = 1
+	
+	layer_set_visible("FX_Bullet_Time", false)
+	
+	if room == Mini_Boss_Room{
+		layer_set_visible("FX_Boss_Bullet_Time", false)	
+	}
 }
 
-
-if game_speed < 1.0 { //black and white shaders
-    layer_set_visible("FX_Bullet_Time", true)
-} else {
-    layer_set_visible("FX_Bullet_Time", false)
-}
 
 cam = view_camera[0]
 
@@ -61,6 +97,10 @@ if instance_exists(obj_player) {
     if obj_player.aim_check == true {
         target = 0.95
     }
+	
+	if global.paused == true{
+		target = 0.95
+	}
 }
 
 new_w = lerp(camera_get_view_width(cam), base_w * target, 0.1)

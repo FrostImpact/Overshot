@@ -19,5 +19,10 @@ padding = 100
 base_w = room_width + padding
 base_h = room_height + padding
 
+
+global.paused = false
+
 window_set_cursor(cr_none)
 window_mouse_set_locked(true)
+
+window_set_size(960,540)

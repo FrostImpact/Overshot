@@ -28,3 +28,9 @@ if keyboard_check_pressed(ord("T"))
     room_goto(Test)
 	textbox_say(["Testing Level"], c_maroon, true, 60)
 }
+
+if keyboard_check_pressed(ord("M"))
+{
+    room_goto(Mini_Boss_Room)
+	textbox_say(["Mini Boss level"], c_maroon, true, 60)
+}

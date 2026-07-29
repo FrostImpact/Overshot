@@ -1,5 +1,5 @@
 image_blend = flash_timer > 0 ? c_white : c_white
-draw_self()
+draw_sprite_ext(sprite_index, image_index, x, y, visual_xscale, visual_yscale, visual_angle, image_blend, image_alpha);
 
 if state == 2 or state == 3 {
     draw_set_color(c_ltgray)
