@@ -4,8 +4,8 @@ if (hp > 0) and (global.paused == false) {
 //i would like to improve the collision with obj_basic so that
 //it is universal, but alas I cannot
 
-    if (place_meeting(x, y, obj_basic)) {
-        var _boss = instance_place(x, y, obj_basic)
+    if (place_meeting(x, y, obj_chrono)) {
+        var _boss = instance_place(x, y, obj_chrono)
         if (_boss != noone) {
             
             var _push_dir = point_direction(_boss.x, _boss.y, x, y)
@@ -14,7 +14,7 @@ if (hp > 0) and (global.paused == false) {
                 _push_dir = random(360)
             }
             
-            while (place_meeting(x, y, obj_basic)) {
+            while (place_meeting(x, y, obj_chrono)) {
                 
                 if (!place_meeting(x,y,obj_wall)){
                     x += lengthdir_x(1, _push_dir)
@@ -25,7 +25,6 @@ if (hp > 0) and (global.paused == false) {
             }
         }
     }
-	
     
     var game_speed = obj_game_manager.game_speed
     yspeed += gravity_force * game_speed
