@@ -13,6 +13,7 @@
     {"$GMFolder":"","%Name":"enemies","folderPath":"folders/enemies.yy","name":"enemies","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"basic enemy","folderPath":"folders/enemies/basic enemy.yy","name":"basic enemy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"final_boss","folderPath":"folders/enemies/final_boss.yy","name":"final_boss","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"bullet enemy","folderPath":"folders/enemies/bullet enemy.yy","name":"bullet enemy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"laser enemy","folderPath":"folders/enemies/laser enemy.yy","name":"laser enemy","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"mini_boss","folderPath":"folders/enemies/mini_boss.yy","name":"mini_boss","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"shield enemy","folderPath":"folders/enemies/shield enemy.yy","name":"shield enemy","resourceType":"GMFolder","resourceVersion":"2.0",},
