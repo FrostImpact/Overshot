@@ -13,3 +13,10 @@ player_y=0;
 slow_time=1;
 slowed=0;
 slowing=false;
+
+wave = 0
+x_rad = 0
+y_rad = 0
+inner_rad = 0
+in_x_rad = 0
+in_y_rad = 0
