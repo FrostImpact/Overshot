@@ -83,9 +83,9 @@ else if boss_slow == true {
 	
 	layer_set_visible("FX_Bullet_Time", false)
 	
-	if room == Mini_Boss_Room{
-		layer_set_visible("FX_Boss_Bullet_Time", false)	
-	}
+
+	layer_set_visible("FX_Boss_Bullet_Time", false)	
+	
 }
 
 
