@@ -38,4 +38,5 @@ z_offset = 0;
 z_spd = 0;
 dash_curr_spd = 0;
 
-
+textbox_say(["To challenge me, is nothing but treason!", 
+			 "Prepare to be slain, traitor!"], c_orange, true, 30);
