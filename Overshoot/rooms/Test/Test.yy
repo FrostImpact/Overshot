@@ -42,15 +42,12 @@
     {"name":"inst_35C76D56","path":"rooms/Test/Test.yy",},
     {"name":"inst_44FA1D2D","path":"rooms/Test/Test.yy",},
     {"name":"inst_3DF629CA","path":"rooms/Test/Test.yy",},
-<<<<<<< HEAD
     {"name":"inst_4E3F12D7","path":"rooms/Test/Test.yy",},
     {"name":"inst_59C44CDC","path":"rooms/Test/Test.yy",},
     {"name":"inst_DEFCBE9","path":"rooms/Test/Test.yy",},
-=======
     {"name":"inst_1E3A41BF","path":"rooms/Test/Test.yy",},
     {"name":"inst_2AE87176","path":"rooms/Test/Test.yy",},
     {"name":"inst_206C7A9E","path":"rooms/Test/Test.yy",},
->>>>>>> 2d5068b6497f29ac493df82f4a60a547b0a0c843
   ],
   "isDnd":false,
   "layers":[
