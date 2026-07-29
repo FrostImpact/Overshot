@@ -84,6 +84,7 @@
     {"id":{"name":"scr_textbox","path":"scripts/scr_textbox/scr_textbox.yy",},},
     {"id":{"name":"spr_basic","path":"sprites/spr_basic/spr_basic.yy",},},
     {"id":{"name":"spr_chrono","path":"sprites/spr_chrono/spr_chrono.yy",},},
+    {"id":{"name":"spr_fast_tile","path":"sprites/spr_fast_tile/spr_fast_tile.yy",},},
     {"id":{"name":"spr_knife","path":"sprites/spr_knife/spr_knife.yy",},},
     {"id":{"name":"spr_laser","path":"sprites/spr_laser/spr_laser.yy",},},
     {"id":{"name":"spr_pause_icon","path":"sprites/spr_pause_icon/spr_pause_icon.yy",},},
