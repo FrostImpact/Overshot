@@ -8,9 +8,9 @@ if (dir < 0) {
 }
 
 if ((dir > _target_dir && dir - _target_dir < 180) || (dir < _target_dir && _target_dir - dir > 180)) {
-    dir -= 0.5;
+    dir -= 1;
 } else {
-    dir += 0.5;
+    dir += 1;
 }
 
 image_angle = dir;
@@ -34,9 +34,7 @@ if (hit_cooldown <= 0) {
             hit_cooldown = hit_cooldown_duration;
         } else {
             var _player_speed = point_distance(0, 0, obj_player.xspeed, obj_player.yspeed);
-            //var _damage = _player_speed * damage_scale;
-			enemy_hp-=enemy_max_hp/2;
-			var _damage = enemy_max_hp/2;
+            var _damage = _player_speed * damage_scale;
             
             if (_damage <= 0.5) {
                 hit_cooldown = hit_cooldown_duration;

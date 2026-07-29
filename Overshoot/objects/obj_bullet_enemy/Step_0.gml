@@ -9,11 +9,11 @@ if (dir<0)
 }
 if ((dir>player && dir-player<180)||(dir<player && player-dir>180))
 {
-	dir-=1;
+	dir-=2;
 }
 else
 {
-	dir+=1;
+	dir+=2;
 }
 xspeed=lengthdir_x(spe,dir);
 yspeed=lengthdir_y(spe,dir);
@@ -30,11 +30,6 @@ image_angle=dir;
 if (place_meeting(x,y,obj_player))
 {
 	obj_player.hp-=5;
-	instance_destroy();
-}
-
-if (!instance_exists(obj_enemy_shoot))
-{
 	instance_destroy();
 }
 

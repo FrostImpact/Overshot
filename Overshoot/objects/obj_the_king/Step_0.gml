@@ -144,7 +144,7 @@ if (global.paused == false) {
             timer -= g_spd;
             var p_dist = random_range(40, 80);
             var p_dir = random(360);
-            part_particles_create(global.p_sys, x + lengthdir_x(p_dist, p_dir), y + lengthdir_y(p_dist, p_dir), global.p_spark, 1);
+        
 
             if (timer <= 0) {
                 state = 6;
@@ -169,7 +169,7 @@ if (global.paused == false) {
                 }
 
                 if (position_meeting(lx, ly, obj_player)) {
-                    obj_player.hp -= 0.8 * g_spd;
+                    obj_player.hp -= 3 * g_spd;
                 }
             }
 

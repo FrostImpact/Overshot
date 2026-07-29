@@ -79,12 +79,12 @@ else if boss_slow == true {
 	
 }
 
- else {
+else {
     game_speed = 1
 	
 	layer_set_visible("FX_Bullet_Time", false)
 	
-	if boss_slow != true or room != Mini_Boss_Room{
+	if boss_slow != true or room != Level7{
 		layer_set_visible("FX_Boss_Bullet_Time", false)	
 	}
 }
