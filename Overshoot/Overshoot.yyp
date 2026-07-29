@@ -61,6 +61,7 @@
     {"id":{"name":"obj_fast_tile","path":"objects/obj_fast_tile/obj_fast_tile.yy",},},
     {"id":{"name":"obj_game_manager","path":"objects/obj_game_manager/obj_game_manager.yy",},},
     {"id":{"name":"obj_ground","path":"objects/obj_ground/obj_ground.yy",},},
+    {"id":{"name":"obj_king_warning","path":"objects/obj_king_warning/obj_king_warning.yy",},},
     {"id":{"name":"obj_knife","path":"objects/obj_knife/obj_knife.yy",},},
     {"id":{"name":"obj_laser","path":"objects/obj_laser/obj_laser.yy",},},
     {"id":{"name":"obj_level_manager","path":"objects/obj_level_manager/obj_level_manager.yy",},},

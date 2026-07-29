@@ -23,6 +23,7 @@
     {"name":"obj_bullet_enemy","order":14,"path":"objects/obj_bullet_enemy/obj_bullet_enemy.yy",},
     {"name":"obj_enemy_shoot","order":12,"path":"objects/obj_enemy_shoot/obj_enemy_shoot.yy",},
     {"name":"obj_fast_tile","order":2,"path":"objects/obj_fast_tile/obj_fast_tile.yy",},
+    {"name":"obj_king_warning","order":2,"path":"objects/obj_king_warning/obj_king_warning.yy",},
     {"name":"obj_knife","order":1,"path":"objects/obj_knife/obj_knife.yy",},
     {"name":"obj_level_manager","order":9,"path":"objects/obj_level_manager/obj_level_manager.yy",},
     {"name":"obj_particle_manager","order":8,"path":"objects/obj_particle_manager/obj_particle_manager.yy",},
