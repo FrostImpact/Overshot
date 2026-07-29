@@ -23,6 +23,12 @@ if keyboard_check_pressed(ord("4"))
 	textbox_say(["Level 4"], c_maroon, true, 60)
 }
 
+if keyboard_check_pressed(ord("9"))
+{
+    room_goto(Level9)
+	textbox_say(["level 9"], c_maroon, true, 60)
+}
+
 if keyboard_check_pressed(ord("T"))
 {
     room_goto(Test)

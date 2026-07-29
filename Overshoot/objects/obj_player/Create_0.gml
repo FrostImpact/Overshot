@@ -38,3 +38,5 @@ hp_bar_height = 24
 visual_xscale = 1
 visual_yscale = 1
 visual_angle = 0
+
+slow=1;

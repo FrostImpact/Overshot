@@ -74,8 +74,8 @@ if (hp > 0) and (global.paused == false) {
         }
     }
 
-    var _move_x = xspeed * game_speed
-    var _move_y = yspeed * game_speed
+    var _move_x = xspeed * game_speed*slow
+    var _move_y = yspeed * game_speed*slow
     var _avg_speed = point_distance(0, 0, xspeed, yspeed)
     var _speed_ratio = clamp(_avg_speed / max_speed, 0, 1)
     
