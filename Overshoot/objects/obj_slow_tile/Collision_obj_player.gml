@@ -1,6 +1,6 @@
-with obj_player {
-	
-	xspeed -= 0.1
-	yspeed -= 0.1
-	
+var _drag = 0.85; 
+
+with (other) {
+    xspeed *= _drag;
+    yspeed *= _drag;
 }
