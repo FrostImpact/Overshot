@@ -77,6 +77,7 @@
     {"id":{"name":"Level2","path":"rooms/Level2/Level2.yy",},},
     {"id":{"name":"Level3","path":"rooms/Level3/Level3.yy",},},
     {"id":{"name":"Level4","path":"rooms/Level4/Level4.yy",},},
+    {"id":{"name":"Level9","path":"rooms/Level9/Level9.yy",},},
     {"id":{"name":"Mini_Boss_Room","path":"rooms/Mini_Boss_Room/Mini_Boss_Room.yy",},},
     {"id":{"name":"Starting_Room","path":"rooms/Starting_Room/Starting_Room.yy",},},
     {"id":{"name":"Test","path":"rooms/Test/Test.yy",},},
@@ -109,6 +110,7 @@
     {"roomId":{"name":"Starting_Room","path":"rooms/Starting_Room/Starting_Room.yy",},},
     {"roomId":{"name":"Test","path":"rooms/Test/Test.yy",},},
     {"roomId":{"name":"Mini_Boss_Room","path":"rooms/Mini_Boss_Room/Mini_Boss_Room.yy",},},
+    {"roomId":{"name":"Level9","path":"rooms/Level9/Level9.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

@@ -19,3 +19,13 @@ if (step==1)
 	}
 }
 
+if (keyboard_check(vk_backspace))
+{
+	textbox_advance();
+	textbox_advance();
+	textbox_advance();
+	textbox_advance();
+	textbox_advance();
+	textbox_advance();
+}
+

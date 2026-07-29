@@ -27,12 +27,12 @@ if (slow>cd_slow)
 if (slowing=true)
 {
 	slowed+=t;
-	obj_player.x-=obj_player.xspeed*amount;
-	obj_player.y-=obj_player.yspeed*amount;
+	obj_player.slow=0.3;
 }
 
 if (slowed>slow_time)
 {
 	slowed=0;
+	obj_player.slow=1;
 	slowing=false;
 }
