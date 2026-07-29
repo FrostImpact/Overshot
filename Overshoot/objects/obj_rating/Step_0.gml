@@ -1,6 +1,6 @@
 if (global.paused == false) {
 	
-	room_time = max(room_time - (1/room_speed), 0)
+	room_time = max(room_time - (1 / room_speed), 0)
 	var _pct = (starting_time > 0) ? (room_time / starting_time) : 0
 
 	previous_rating = current_rating

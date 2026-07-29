@@ -46,3 +46,8 @@ if keyboard_check_pressed(ord("7"))
     room_goto(Level7)
 	textbox_say(["Mini Boss level"], c_maroon, true, 60)
 }
+
+if keyboard_check_pressed(ord("S"))
+{
+    room_goto(Starting_Room)
+}
