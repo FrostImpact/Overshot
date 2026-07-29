@@ -69,6 +69,7 @@
     {"id":{"name":"obj_slow","path":"objects/obj_slow/obj_slow.yy",},},
     {"id":{"name":"obj_spike","path":"objects/obj_spike/obj_spike.yy",},},
     {"id":{"name":"obj_text_box","path":"objects/obj_text_box/obj_text_box.yy",},},
+    {"id":{"name":"obj_tutorial_manager","path":"objects/obj_tutorial_manager/obj_tutorial_manager.yy",},},
     {"id":{"name":"obj_wall_hurt","path":"objects/obj_wall_hurt/obj_wall_hurt.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"Level1","path":"rooms/Level1/Level1.yy",},},
