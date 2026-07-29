@@ -61,6 +61,7 @@ if global.paused == true{
 	game_speed = 0
 	
 	layer_set_visible("FX_Bullet_Time", true)
+	
 	layer_set_visible("FX_Boss_Bullet_Time", false)
 }
 
@@ -83,9 +84,9 @@ else if boss_slow == true {
 	
 	layer_set_visible("FX_Bullet_Time", false)
 	
-
-	layer_set_visible("FX_Boss_Bullet_Time", false)	
-	
+	if boss_slow != true or room != Mini_Boss_Room{
+		layer_set_visible("FX_Boss_Bullet_Time", false)	
+	}
 }
 
 
@@ -95,11 +96,12 @@ target = 1
 
 if instance_exists(obj_player) {
     if obj_player.aim_check == true {
-        target = 0.95
+        target -= 0.05
+		
     }
 	
 	if global.paused == true{
-		target = 0.95
+		target -= 0.05
 	}
 }
 

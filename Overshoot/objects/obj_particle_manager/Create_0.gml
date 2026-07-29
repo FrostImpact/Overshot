@@ -34,3 +34,14 @@
 	part_type_color1(global.p_pulse, c_white);
 	part_type_alpha2(global.p_pulse, 1, 0);
 	part_type_life(global.p_pulse, 10, 15); 
+	
+	global.p_slime = part_type_create();
+	part_type_shape(global.p_slime, pt_shape_disk);
+	part_type_size(global.p_slime, 0.1, 0.2, -0.002, 0.02);
+	part_type_color3(global.p_slime, c_lime, c_green, c_olive);
+	part_type_alpha3(global.p_slime, 0.9, 0.7, 0);
+	part_type_speed(global.p_slime, 1, 1.5, -0.02, 0);
+	part_type_direction(global.p_slime, 0, 359, 0, 0);
+	part_type_gravity(global.p_slime, 0.15, 270); 
+	part_type_blend(global.p_slime, false); 
+	part_type_life(global.p_slime, 30, 50);

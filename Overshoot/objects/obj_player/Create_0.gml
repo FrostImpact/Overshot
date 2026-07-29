@@ -39,4 +39,4 @@ visual_xscale = 1
 visual_yscale = 1
 visual_angle = 0
 
-slow=1;
+slow = 1;
