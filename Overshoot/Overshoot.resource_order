@@ -2,6 +2,7 @@
   "FolderOrderSettings":[
     {"name":"enemies","order":2,"path":"folders/enemies.yy",},
     {"name":"basic enemy","order":9,"path":"folders/enemies/basic enemy.yy",},
+    {"name":"final_boss","order":11,"path":"folders/enemies/final_boss.yy",},
     {"name":"laser enemy","order":10,"path":"folders/enemies/laser enemy.yy",},
     {"name":"mini_boss","order":2,"path":"folders/enemies/mini_boss.yy",},
     {"name":"shield enemy","order":8,"path":"folders/enemies/shield enemy.yy",},
@@ -29,6 +30,7 @@
     {"name":"obj_wall_hurt","order":3,"path":"objects/obj_wall_hurt/obj_wall_hurt.yy",},
     {"name":"obj_wall","order":2,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"Level1","order":1,"path":"rooms/Level1/Level1.yy",},
+    {"name":"Level10","order":8,"path":"rooms/Level10/Level10.yy",},
     {"name":"Level3","order":2,"path":"rooms/Level3/Level3.yy",},
     {"name":"Level4","order":3,"path":"rooms/Level4/Level4.yy",},
     {"name":"Level9","order":7,"path":"rooms/Level9/Level9.yy",},
@@ -47,6 +49,7 @@
     {"name":"spr_shield","order":1,"path":"sprites/spr_shield/spr_shield.yy",},
     {"name":"spr_slow","order":1,"path":"sprites/spr_slow/spr_slow.yy",},
     {"name":"spr_text_box","order":2,"path":"sprites/spr_text_box/spr_text_box.yy",},
+    {"name":"spr_the_king","order":1,"path":"sprites/spr_the_king/spr_the_king.yy",},
     {"name":"spr_wall_hurt","order":2,"path":"sprites/spr_wall_hurt/spr_wall_hurt.yy",},
     {"name":"spr_wall","order":1,"path":"sprites/spr_wall/spr_wall.yy",},
     {"name":"spri_player_death","order":3,"path":"sprites/spri_player_death/spri_player_death.yy",},
