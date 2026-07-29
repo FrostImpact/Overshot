@@ -54,9 +54,9 @@ if keyboard_check_pressed(ord("9"))
 	textbox_say(["level 9"], c_maroon, true, 60)
 }
 
-if keyboard_check_pressed(ord("B"))
+if keyboard_check_pressed(ord("10"))
 {
-    room_goto(Level0)
+    room_goto(Level10)
 	textbox_say(["level 10"], c_maroon, true, 60)
 }
 
@@ -66,8 +66,8 @@ if keyboard_check_pressed(ord("T"))
 	textbox_say(["Testing Level"], c_maroon, true, 60)
 }
 
-if keyboard_check_pressed(ord("7"))
+if keyboard_check_pressed(ord("M"))
 {
-    room_goto(Level7)
+    room_goto(Mini_Boss_Room)
 	textbox_say(["Mini Boss level"], c_maroon, true, 60)
 }
