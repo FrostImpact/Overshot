@@ -23,11 +23,13 @@ function play_sound_scr(sound_name) {
         case "chrono":
             audio_stop_sound(snd_background_music)
             audio_play_sound(snd_chrono, 1, true)
+			audio_sound_gain(snd_chrono,0.5,0)
             break
 			
 		case "king":
             audio_stop_sound(snd_background_music)
             audio_play_sound(snd_king, 1, true)
+			audio_sound_gain(snd_king,0.5,0)
             break
             
         default:

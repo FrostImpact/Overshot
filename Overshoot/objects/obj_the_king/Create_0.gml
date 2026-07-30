@@ -8,8 +8,8 @@ targ_x = 0
 targ_y = 0
 
 //Health & Stats 
-enemy_hp = 100
-enemy_max_hp = 100
+enemy_hp = 500
+enemy_max_hp = 500
 phase = 1
 
 target_hp = enemy_hp

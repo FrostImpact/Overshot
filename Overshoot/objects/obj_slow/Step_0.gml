@@ -55,4 +55,10 @@ if global.paused == false{
 		obj_player.slow=1;
 		slowing=false;
 	}
+	if (enemy_hp<=0)
+	{
+		obj_player.slow=1;
+		slowing=false;
+	}
+		
 }
