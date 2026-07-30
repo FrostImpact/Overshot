@@ -47,7 +47,8 @@ if global.paused == false{
 					
 					}
 				
-	                instance_destroy()
+	                global.clear+=1;
+					instance_destroy()
 				
 				
 	            }

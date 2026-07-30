@@ -3,6 +3,8 @@ if (instance_exists(obj_player)) {
     
     if (obj_player.hp <= 0) {
 		
+		global.clear=0;
+		
 		obj_player.image_speed = 0.5
       
         if (obj_player.sprite_index != spri_player_death) {

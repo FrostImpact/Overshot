@@ -9,3 +9,8 @@ if (global.paused == false) {
 		
 	}
 }
+
+if (place_meeting(x,y,obj_player))
+{
+	global.clear+=1;
+}
