@@ -8,7 +8,7 @@ if room != Starting_Room {
 
 //lv0 is the boss level
 //last time is boss level time
-room_times = [120,60,60,60,60,60,60,60,60,300]
+room_times = [120,70,70,120,150,200,250,150,160,320]
 
 global.curr_room = real(_last_char)
 
