@@ -29,6 +29,7 @@
     {"name":"obj_king_warning","order":2,"path":"objects/obj_king_warning/obj_king_warning.yy",},
     {"name":"obj_knife","order":1,"path":"objects/obj_knife/obj_knife.yy",},
     {"name":"obj_level_manager","order":9,"path":"objects/obj_level_manager/obj_level_manager.yy",},
+    {"name":"obj_music_manager","order":14,"path":"objects/obj_music_manager/obj_music_manager.yy",},
     {"name":"obj_particle_manager","order":8,"path":"objects/obj_particle_manager/obj_particle_manager.yy",},
     {"name":"obj_rating","order":1,"path":"objects/obj_rating/obj_rating.yy",},
     {"name":"obj_shatter","order":4,"path":"objects/obj_shatter/obj_shatter.yy",},
