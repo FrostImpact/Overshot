@@ -104,6 +104,7 @@
     {"id":{"name":"snd_king","path":"sounds/snd_king/snd_king.yy",},},
     {"id":{"name":"snd_release","path":"sounds/snd_release/snd_release.yy",},},
     {"id":{"name":"snd_stretch","path":"sounds/snd_stretch/snd_stretch.yy",},},
+    {"id":{"name":"spinopel_hard_rubber_ball_393211","path":"sounds/spinopel_hard_rubber_ball_393211/spinopel_hard_rubber_ball_393211.yy",},},
     {"id":{"name":"spr_basic","path":"sprites/spr_basic/spr_basic.yy",},},
     {"id":{"name":"spr_chrono","path":"sprites/spr_chrono/spr_chrono.yy",},},
     {"id":{"name":"spr_crown","path":"sprites/spr_crown/spr_crown.yy",},},

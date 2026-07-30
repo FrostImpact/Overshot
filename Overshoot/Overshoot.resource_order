@@ -56,6 +56,7 @@
     {"name":"snd_king","order":8,"path":"sounds/snd_king/snd_king.yy",},
     {"name":"snd_release","order":5,"path":"sounds/snd_release/snd_release.yy",},
     {"name":"snd_stretch","order":4,"path":"sounds/snd_stretch/snd_stretch.yy",},
+    {"name":"spinopel_hard_rubber_ball_393211","order":9,"path":"sounds/spinopel_hard_rubber_ball_393211/spinopel_hard_rubber_ball_393211.yy",},
     {"name":"spr_basic","order":1,"path":"sprites/spr_basic/spr_basic.yy",},
     {"name":"spr_chrono","order":2,"path":"sprites/spr_chrono/spr_chrono.yy",},
     {"name":"spr_crown","order":3,"path":"sprites/spr_crown/spr_crown.yy",},
