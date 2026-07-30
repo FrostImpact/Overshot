@@ -25,7 +25,7 @@ if (hp > 0) and (global.paused == false) {
             }
         }
     }
-	
+    
     
     var game_speed = obj_game_manager.game_speed
     yspeed += gravity_force * game_speed
@@ -78,11 +78,11 @@ if (hp > 0) and (global.paused == false) {
     var _move_x = xspeed * game_speed * slow
     var _move_y = yspeed * game_speed * slow
 
-	
-	if slow < 1 {
-		part_particles_create(global.p_sys, random_range(x + 5,x - 5), random_range(y + 5, y - 5), global.p_slime, 1);
-	}
-	
+    
+    if slow < 1 {
+        part_particles_create(global.p_sys, random_range(x + 5,x - 5), random_range(y + 5, y - 5), global.p_slime, 1);
+    }
+    
     var _avg_speed = point_distance(0, 0, xspeed, yspeed)
     var _speed_ratio = clamp(_avg_speed / max_speed, 0, 1)
     
@@ -90,6 +90,7 @@ if (hp > 0) and (global.paused == false) {
         visual_angle = point_direction(0, 0, xspeed, yspeed)
     }
     
+    // --- HORIZONTAL COLLISION ---
     if (place_meeting(x + _move_x, y, obj_wall) || place_meeting(x + _move_x, y, obj_basic)) {
         var _sign_x = sign(_move_x)
         
@@ -117,6 +118,7 @@ if (hp > 0) and (global.paused == false) {
         xspeed = -xspeed * bounce
         
         if (impact_speed > 1) { 
+            play_sound_scr("bounce") // <-- PLAY HORIZONTAL BOUNCE SOUND HERE
             squash_timer = squash_duration * game_speed
         }
         
@@ -124,6 +126,7 @@ if (hp > 0) and (global.paused == false) {
         x += _move_x
     }
     
+    // --- VERTICAL COLLISION ---
     if (place_meeting(x, y + _move_y, obj_wall) || place_meeting(x, y + _move_y, obj_basic) || place_meeting(x, y + _move_y, obj_ground)) {
         var _sign_y = sign(_move_y)
         
@@ -155,6 +158,7 @@ if (hp > 0) and (global.paused == false) {
         }
         
         if (impact_speed > 1) {
+            play_sound_scr("bounce") // <-- PLAY VERTICAL BOUNCE SOUND HERE
             squash_timer = squash_duration * game_speed
         }
         
@@ -169,12 +173,12 @@ if (hp > 0) and (global.paused == false) {
     var _on_ground = place_meeting(x, y + 2, obj_wall)
 
     if (squash_timer > 0) {
-		
+        
         squash_timer -= 1
         var _squash_ratio = squash_timer / squash_duration
         _target_xscale = 1 - squash_amount * _squash_ratio
         _target_yscale = 1 + squash_amount * _squash_ratio
-		
+        
     } else if (_on_ground && abs(yspeed) <= 1) {
 
         _target_xscale = 1

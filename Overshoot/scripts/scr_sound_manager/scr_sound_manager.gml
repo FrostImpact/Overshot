@@ -9,6 +9,10 @@ function play_sound_scr(sound_name) {
             audio_stop_sound(snd_stretch)
             audio_play_sound(snd_release, 1, false)
             break
+			
+		case "bounce":
+			audio_play_sound(snd_bounce, 1, false)
+			break
             
         case "bgm":
             audio_stop_sound(snd_chrono)

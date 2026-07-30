@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_stretch.mp3",
-  "volume":0.31,
+  "volume":0.35,
 }
