@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"spinopel_hard_rubber_ball_393211",
+  "%Name":"snd_bounce",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":1.6457143,
+  "duration":0.52244896,
   "exportDir":"",
-  "name":"spinopel_hard_rubber_ball_393211",
+  "name":"snd_bounce",
   "parent":{
     "name":"sounds",
     "path":"folders/sounds.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"spinopel_hard_rubber_ball_393211.mp3",
-  "volume":1.0,
+  "soundFile":"snd_bounce.wav",
+  "volume":0.89,
 }
