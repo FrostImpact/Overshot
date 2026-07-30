@@ -243,7 +243,7 @@ if (global.paused == false) {
 
             if (place_meeting(x, y, obj_player)) {
                 obj_player.hp -= 25
-                // UPDATED: Dash knockback now respects walls
+
                 var k_dir = dash_dir
                 var kx = lengthdir_x(50, k_dir)
                 var ky = lengthdir_y(50, k_dir)

@@ -7,7 +7,7 @@
   },
   "bitDepth":1,
   "channelFormat":0,
-  "compression":0,
+  "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
   "duration":1.0448979,
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_stretch.mp3",
-  "volume":1.0,
+  "volume":0.31,
 }

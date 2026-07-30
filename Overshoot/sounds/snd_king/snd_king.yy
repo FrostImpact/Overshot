@@ -1,18 +1,18 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_release",
+  "%Name":"snd_king",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
   "channelFormat":0,
-  "compression":2,
+  "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.6008163,
+  "duration":0.0,
   "exportDir":"",
-  "name":"snd_release",
+  "name":"snd_king",
   "parent":{
     "name":"sounds",
     "path":"folders/sounds.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_release.wav",
-  "volume":0.28,
+  "soundFile":"",
+  "volume":1.0,
 }
