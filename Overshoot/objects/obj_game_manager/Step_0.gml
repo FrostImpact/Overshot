@@ -33,27 +33,30 @@ if (keyboard_check_pressed(ord("R"))){
 
 //pause 
 
-if (keyboard_check_pressed(vk_escape)) {
+//if (keyboard_check_pressed(vk_escape)) {
 	
-	if global.paused == false{
-		global.paused = true	
+//	if global.paused == false{
+//		global.paused = true	
 		
-		show_debug_message("paused")
+//		show_debug_message("paused")
 		
-		window_set_cursor(cr_default)
-		window_mouse_set_locked(false)
-	}
+//		window_set_cursor(cr_default)
+//		window_mouse_set_locked(false)
+		
+//	}
 	
-	else {	
-		global.paused = false	
+//	else {	
+//		global.paused = false	
 		
-		window_set_cursor(cr_none)
-		window_mouse_set_locked(true)
+//		window_set_cursor(cr_none)
+//		window_mouse_set_locked(true)
 		
-		show_debug_message("unpaused")
-	}
+//		show_debug_message("unpaused")
+		
 	
-}
+//	}
+//}
+	
 
 
 

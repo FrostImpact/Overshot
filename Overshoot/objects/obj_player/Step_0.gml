@@ -48,13 +48,17 @@ if (hp > 0) and (global.paused == false) {
         var _cx = window_get_width() / 2
         var _cy = window_get_height() / 2
         
-        aim_drag_x += _cx - window_mouse_get_x()
-        aim_drag_y += _cy - window_mouse_get_y()
+        //aim_drag_x += _cx - window_mouse_get_x()
+        //aim_drag_y += _cy - window_mouse_get_y()
+		
+		aim_drag_x -= window_mouse_get_delta_x();
+        aim_drag_y -= window_mouse_get_delta_y();
         
-        window_mouse_set(_cx, _cy)
+        //window_mouse_set(_cx, _cy)
         
         if (mouse_check_button_released(mb_left)) {
             play_sound_scr("release")
+			
             
             aim_check = false
             
