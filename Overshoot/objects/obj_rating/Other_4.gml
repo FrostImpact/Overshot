@@ -8,7 +8,7 @@ if room != Starting_Room {
 
 //lv0 is the boss level
 //last time is boss level time
-room_times = [120,60,60,60,60,60,60,60,60]
+room_times = [120,60,60,60,60,60,60,60,60,300]
 
 global.curr_room = real(_last_char)
 
@@ -21,17 +21,12 @@ if global.curr_room = 0{
 	//last time is boss level time
 	//room_times = [60,60,60,60,60,60,60,60,60,60]
 	
-	room_time_max = room_times[-1]
-}
-
-if global.curr_room = 1{
-	
-	return
+	room_time_max = room_times[9]
 }
 
 else {
 	
-	room_time_max = room_times[global.curr_room - 2]
+	room_time_max = room_times[global.curr_room - 1]
 	
 }
 
