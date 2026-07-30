@@ -22,13 +22,18 @@ if global.paused == false{
 		
 	        var _player_speed = point_distance(0, 0, obj_player.xspeed, obj_player.yspeed)
 	        var _damage = _player_speed * damage_scale
+			
 	        if (_damage > 0) {
 			
 	            enemy_hp -= _damage
+				
 	            hit_cooldown = hit_cooldown_duration
+				
 	            var _knock_dir = point_direction(obj_player.x, obj_player.y, x, y)
+				
 	            knockback_x = lengthdir_x(_player_speed * knockback_force, _knock_dir)
 	            knockback_y = lengthdir_y(_player_speed * knockback_force, _knock_dir)
+				
 	            hit_squash_timer = hit_squash_duration
 	            flash_timer = flash_duration
 			

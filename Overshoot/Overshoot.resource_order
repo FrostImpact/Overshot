@@ -22,6 +22,7 @@
   "ResourceOrderSettings":[
     {"name":"f_pixolde","order":3,"path":"fonts/f_pixolde/f_pixolde.yy",},
     {"name":"obj_crown","order":5,"path":"objects/obj_crown/obj_crown.yy",},
+    {"name":"obj_ending","order":13,"path":"objects/obj_ending/obj_ending.yy",},
     {"name":"obj_enemy_shoot","order":1,"path":"objects/obj_enemy_shoot/obj_enemy_shoot.yy",},
     {"name":"obj_fast_tile","order":2,"path":"objects/obj_fast_tile/obj_fast_tile.yy",},
     {"name":"obj_invisible_wall","order":7,"path":"objects/obj_invisible_wall/obj_invisible_wall.yy",},
