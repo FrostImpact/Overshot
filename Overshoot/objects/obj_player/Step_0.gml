@@ -47,7 +47,7 @@ if (hp > 0) and (global.paused == false) {
     if (aim_check) {
         var _cx = window_get_width() / 2
         var _cy = window_get_height() / 2
-        
+			
         //aim_drag_x += _cx - window_mouse_get_x()
         //aim_drag_y += _cy - window_mouse_get_y()
 		
@@ -94,7 +94,6 @@ if (hp > 0) and (global.paused == false) {
         visual_angle = point_direction(0, 0, xspeed, yspeed)
     }
     
-    // --- HORIZONTAL COLLISION ---
     if (place_meeting(x + _move_x, y, obj_wall) || place_meeting(x + _move_x, y, obj_basic)) {
         var _sign_x = sign(_move_x)
         
@@ -122,7 +121,7 @@ if (hp > 0) and (global.paused == false) {
         xspeed = -xspeed * bounce
         
         if (impact_speed > 1) { 
-            play_sound_scr("bounce") // <-- PLAY HORIZONTAL BOUNCE SOUND HERE
+            play_sound_scr("bounce") 
             squash_timer = squash_duration * game_speed
         }
         
@@ -130,7 +129,6 @@ if (hp > 0) and (global.paused == false) {
         x += _move_x
     }
     
-    // --- VERTICAL COLLISION ---
     if (place_meeting(x, y + _move_y, obj_wall) || place_meeting(x, y + _move_y, obj_basic) || place_meeting(x, y + _move_y, obj_ground)) {
         var _sign_y = sign(_move_y)
         
@@ -162,7 +160,7 @@ if (hp > 0) and (global.paused == false) {
         }
         
         if (impact_speed > 1) {
-            play_sound_scr("bounce") // <-- PLAY VERTICAL BOUNCE SOUND HERE
+            play_sound_scr("bounce") 
             squash_timer = squash_duration * game_speed
         }
         
