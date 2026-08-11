@@ -11,3 +11,4 @@ previous_rating = 0
 rating_scale = 1
 rating_angle = 0
 flash_alpha = 0
+

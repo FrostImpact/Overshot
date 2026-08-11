@@ -11,8 +11,8 @@
   "name":"obj_transition_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Overshoot",
-    "path":"Overshoot.yyp",
+    "name":"managers",
+    "path":"folders/managers.yy",
   },
   "parentObjectId":null,
   "persistent":true,

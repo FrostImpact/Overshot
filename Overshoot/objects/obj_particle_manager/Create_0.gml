@@ -2,7 +2,7 @@
 	part_system_depth(global.p_sys, -100)
 
 	global.p_trail = part_type_create()
-	part_type_sprite(global.p_trail, spr_chrono, false, false, false)
+	part_type_sprite(global.p_trail, spr_player, false, false, false)
 	part_type_life(global.p_trail, 12, 18)
 	part_type_alpha3(global.p_trail, 0.6, 0.2, 0)
 	part_type_size(global.p_trail, 1, 1, -0.02, 0)

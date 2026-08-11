@@ -13,12 +13,12 @@ var _fire_ratio = _firing ? (laser_timer / fire_duration) : 0
 var _width = _firing ? lerp(3, 14, _fire_ratio) : 3
 
 if (_firing) {
-    draw_set_color(c_red)
+    draw_set_color($4040ED)
     draw_set_alpha(laser_alpha * 0.25)
     draw_line_width(x, y, _end_x, _end_y, _width + 12)
 }
 
-draw_set_color(c_red)
+draw_set_color($4040ED)
 draw_set_alpha(laser_alpha)
 draw_line_width(x, y, _end_x, _end_y, _width)
 draw_set_alpha(1)

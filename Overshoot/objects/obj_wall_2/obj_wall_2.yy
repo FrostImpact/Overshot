@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_level_manager",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_wall_2",
+  "eventList":[],
   "managed":true,
-  "name":"obj_level_manager",
+  "name":"obj_wall_2",
   "overriddenProperties":[],
   "parent":{
-    "name":"managers",
-    "path":"folders/managers.yy",
+    "name":"new blocks",
+    "path":"folders/obstacles/new blocks.yy",
   },
-  "parentObjectId":null,
-  "persistent":true,
+  "parentObjectId":{
+    "name":"obj_wall",
+    "path":"objects/obj_wall/obj_wall.yy",
+  },
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_wall_2",
+    "path":"sprites/spr_wall_2/spr_wall_2.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
